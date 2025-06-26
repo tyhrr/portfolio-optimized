@@ -1,0 +1,88 @@
+{
+  "name": "alan-salva-portfolio",
+  "version": "2.0.0",
+  "description": "Modern, responsive personal portfolio website for Alan Salva - Python Developer and Data Analysis Student",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Building optimized version...' && npm run minify",
+    "minify": "echo 'Minification would happen here with proper build tools'",
+    "test": "echo 'Running tests...' && npm run validate",
+    "validate": "echo 'HTML and CSS validation would happen here'",
+    "lint": "echo 'Linting would happen here with eslint and stylelint'",
+    "format": "echo 'Code formatting would happen here with prettier'",
+    "lighthouse": "echo 'Lighthouse audit would run here'",
+    "deploy": "echo 'Deployment script would run here'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyhrr/alan-salva-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "python-developer",
+    "data-analysis",
+    "responsive-design",
+    "multilingual",
+    "accessible",
+    "html5",
+    "css3",
+    "javascript",
+    "es6",
+    "bem-methodology",
+    "performance-optimized",
+    "seo-friendly"
+  ],
+  "author": {
+    "name": "Alan Salva",
+    "email": "alangabrielsalva@gmail.com",
+    "url": "https://alansalva.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tyhrr/alan-salva-portfolio/issues",
+    "email": "alangabrielsalva@gmail.com"
+  },
+  "homepage": "https://alansalva.dev",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 10"
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "config": {
+    "port": 8000,
+    "host": "localhost"
+  },
+  "files": [
+    "index.html",
+    "css/",
+    "js/",
+    "assets/",
+    "README.md",
+    "LICENSE"
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/tyhrr"
+  },
+  "contributors": [
+    {
+      "name": "Alan Salva",
+      "email": "alangabrielsalva@gmail.com",
+      "url": "https://github.com/tyhrr"
+    }
+  ],
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

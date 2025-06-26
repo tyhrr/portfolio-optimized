@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- Essential Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Alan Salva | Python Developer & Data Analyst Portfolio</title>
+  <meta name="description" content="Professional portfolio of Alan Salva - Python Developer and Data Analysis Student. Showcasing web development projects, skills in Python, JavaScript, HTML/CSS, and data analysis.">
+  <meta name="keywords" content="Python developer, web development, data analysis, portfolio, Alan Salva, programming, full-stack developer, JavaScript, HTML, CSS, React, GitHub">
+  <meta name="author" content="Alan Salva">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://alansalva.dev">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alansalva.dev">
+  <meta property="og:title" content="Alan Salva | Python Developer Portfolio">
+  <meta property="og:description" content="Professional portfolio showcasing web development projects and Python programming skills">
+  <meta property="og:image" content="assets/img/fotoperfil.png">
+  <meta property="og:site_name" content="Alan Salva Portfolio">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://alansalva.dev">
+  <meta name="twitter:title" content="Alan Salva | Python Developer Portfolio">
+  <meta name="twitter:description" content="Professional portfolio showcasing web development projects and skills">
+  <meta name="twitter:image" content="assets/img/fotoperfil.png">
+  
+  <!-- Favicon and Icons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fotoperfil.png">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style">
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="assets/img/banner.jpg" as="image">
+  
+  <!-- External Stylesheets -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles-optimized.css">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#FF6B00">
+</head>  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Main Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav__content">
+        <div class="navbar__brand">
+          <a href="#" class="brand-link" aria-label="Go to homepage">
+            <span class="brand-text">AS</span>
+          </a>
+        </div>
+        
+        <!-- Language Switcher -->
+        <div class="language-switcher" aria-label="Language selector">
+          <button class="lang-btn-main" id="currentLang" aria-haspopup="true" aria-expanded="false">
+            EN <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button class="lang-option" data-lang="es" role="menuitem">ES</button>
+            <button class="lang-option" data-lang="hr" role="menuitem">HR</button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <label for="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle mobile menu">
+          <i class="ri-menu-line" aria-hidden="true"></i>
+        </label>
+        <input type="checkbox" name="mobile-menu-toggle" id="mobile-menu-toggle" class="mobile-menu-input">
+        
+        <!-- Navigation Menu -->
+        <ul class="navbar__menu" role="menubar">
+          <li role="none">
+            <a href="assets/documents/Motivaton letter Alan Salva.pdf" 
+               download 
+               class="nav-link"
+               role="menuitem"
+               aria-label="Download motivation letter">
+              <span data-key="nav-motivation">Motivation</span> 
+              <i class="fa-solid fa-bomb nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li role="none">
+            <a href="assets/documents/Certifications - Alan Salva.pdf" 
+               download 
+               class="nav-link"
+               role="menuitem"
+               aria-label="Download resume">
+              <span data-key="nav-resume">Resume</span> 
+              <i class="fa-solid fa-file nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li role="none">
+            <a href="mailto:alangabrielsalva@gmail.com?subject=Open Positions" 
+               class="nav-link"
+               role="menuitem"
+               aria-label="Send email">
+              <span data-key="nav-contact">Contact</span> 
+              <i class="fa-solid fa-comment nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li role="none">
+            <a href="#projects" 
+               class="nav-link"
+               role="menuitem"
+               aria-label="View projects">
+              <span data-key="nav-projects">Projects</span> 
+              <i class="fa-solid fa-diagram-project nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main id="main-content">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero__container">
+          <div class="hero__content">
+            <p class="hero__greeting" data-key="hero-greeting">HELLO</p>
+            <h1 id="hero-title" class="hero__title">
+              <span data-key="hero-intro">I'm</span> 
+              <span class="hero__name">Alan<br>a</span> 
+              <span data-key="hero-role">Web Developer</span>
+            </h1>
+            <p class="hero__description" data-key="hero-description">
+              Welcome to my personal portfolio! I'm Alan, a Python developer and data analysis student.
+              I've worked on a variety of web projects, ranging from personal blogs to e-commerce platforms. 
+              I am seeking an opportunity to enhance and expand my knowledge and skills in the field of development and artificial intelligence.
+            </p>
+            
+            <!-- Call to Action -->
+            <div class="hero__actions">
+              <a href="assets/documents/ALAN SALVACV-EN-IT.pdf" 
+                 download 
+                 class="btn btn--primary"
+                 aria-label="Download resume">
+                <span data-key="hero-resume">Resume</span> 
+                <i class="fa-solid fa-paper-plane btn__icon" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Profile Image -->
+          <div class="hero__image">
+            <img src="assets/img/fotoperfil.png" 
+                 alt="Alan Salva - Python Developer Profile Photo" 
+                 class="profile-img"
+                 loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <!-- Toolbox/Skills Section -->
+      <section class="toolbox-section" aria-labelledby="toolbox-title">
+        <div class="toolbox__container">
+          <h2 id="toolbox-title" class="toolbox__title"> 
+            <span data-key="toolbox-title">My</span><br>
+            <span data-key="toolbox-subtitle">Toolbox</span>
+          </h2>
+          
+          <div class="toolbox__carousel">
+            <div class="carousel-container" role="img" aria-label="Technology skills carousel">
+              <div class="carousel-content">
+                <!-- Technologies will be loaded dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section" aria-labelledby="projects-title">
+        <div class="projects__container">
+          <h2 id="projects-title" class="projects__title" data-key="projects-title">My Projects</h2>
+          
+          <!-- Projects Grid -->
+          <div id="projects-grid" class="projects__grid" role="region" aria-live="polite">
+            <!-- Projects will be loaded dynamically -->
+          </div>
+          
+          <!-- Loading Indicator -->
+          <div id="loading-indicator" class="loading" style="display: none;" aria-hidden="true">
+            <span data-key="loading-text">Loading more projects...</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__content">
+        <!-- Social Links -->
+        <nav class="social-nav" aria-label="Social media links">
+          <a href="https://wa.me/385957926694?text=Hola%20Alan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
+             class="social-link" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Contact via WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:alangabrielsalva@gmail.com?subject=Contact from Portfolio" 
+             class="social-link"
+             aria-label="Send email">
+            <i class="far fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/tyhrr" 
+             class="social-link"
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="View GitHub profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </nav>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; <span id="current-year">2025</span> Designed by ASDesign
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
