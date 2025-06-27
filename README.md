@@ -212,9 +212,6 @@ const projectsData = [
 - **Core Web Vitals**: All metrics in green
 - **Accessibility Score**: 100/100
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
