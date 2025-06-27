@@ -1,6 +1,6 @@
 # 🚀 Alan Salva - Personal Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://alansalva.dev)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://alansalva.online)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -32,6 +32,12 @@
 - **Mobile-First Design**: Responsive design approach
 - **Progressive Enhancement**: Graceful degradation for older browsers
 - **Version Control**: Git and GitHub
+
+## 🌐 Live Demo
+
+Visit the live portfolio at: **[https://alansalva.online](https://alansalva.online)**
+
+Alternative URL: [https://tyhrr.github.io/portfolio-optimized](https://tyhrr.github.io/portfolio-optimized)
 
 ## 📸 Screenshots
 
