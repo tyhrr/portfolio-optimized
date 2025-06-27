@@ -219,10 +219,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Alan Salva**
-- Portfolio: [alansalva.dev](https://alansalva.dev)
+- Portfolio: [alansalva.dev]()
 - GitHub: [@tyhrr](https://github.com/tyhrr)
 - Email: alangabrielsalva@gmail.com
-- LinkedIn: [Alan Salva](https://linkedin.com/in/alan-salva)
+- LinkedIn: [Alan Salva](https://www.linkedin.com/in/alnsal/)
 
 ## 🙏 Acknowledgments
 
