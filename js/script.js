@@ -13,7 +13,6 @@
 const CONFIG = {
   projectsPerLoad: 3,
   loadDelay: 1000,
-  carouselDuration: 30000,
   defaultLanguage: 'en',
   storageKey: 'selectedLanguage'
 };
@@ -24,8 +23,6 @@ const SELECTORS = {
   currentLangBtn: '#currentLang',
   langDropdown: '#langDropdown',
   languageSwitcher: '.language-switcher',
-  carouselContainer: '.carousel-container',
-  carouselContent: '.carousel-content',
   mobileMenuInput: '#mobile-menu-toggle',
   navbarMenu: '.navbar__menu'
 };
@@ -43,7 +40,7 @@ const projectsData = [
   {
     title: "Personal Portfolio",
     description: "Personal WebSite, using HTML, CSS, JS",
-    link: "https://github.com/tyhrr/personal-portolio",
+    link: "https://github.com/tyhrr/portfolio-optimized",
     technologies: ["HTML", "CSS", "JavaScript"]
   },
   {
@@ -69,8 +66,6 @@ const translations = {
     'hero-role': 'Web Developer',
     'hero-description': "Welcome to my personal portfolio! I'm Alan, a Python developer and data analysis student. I've worked on a variety of web projects, ranging from personal blogs to e-commerce platforms. I am seeking an opportunity to enhance and expand my knowledge and skills in the field of development and artificial intelligence.",
     'hero-resume': 'Resume',
-    'toolbox-title': 'My',
-    'toolbox-subtitle': 'Toolbox',
     'projects-title': 'My Projects',
     'about-website-title': 'About This Website',
     'about-website-description': 'A complete journey from concept to deployment - documenting the evolution of this portfolio',
@@ -89,8 +84,6 @@ const translations = {
     'hero-role': 'Desarrollador Web',
     'hero-description': '¡Bienvenido a mi portafolio personal! Soy Alan, desarrollador Python y estudiante de análisis de datos. He trabajado en una variedad de proyectos web, desde blogs personales hasta plataformas de comercio electrónico. Busco una oportunidad para mejorar y expandir mis conocimientos y habilidades en el campo del desarrollo y la inteligencia artificial.',
     'hero-resume': 'Currículum',
-    'toolbox-title': 'Mis',
-    'toolbox-subtitle': 'Herramientas',
     'projects-title': 'Mis Proyectos',
     'about-website-title': 'Sobre Este Sitio Web',
     'about-website-description': 'Un viaje completo desde el concepto hasta el despliegue - documentando la evolución de este portafolio',
@@ -109,8 +102,6 @@ const translations = {
     'hero-role': 'Web Developer',
     'hero-description': 'Dobrodošli u moj osobni portfelj! Ja sam Alan, Python developer i student analize podataka. Radio sam na raznim web projektima, od osobnih blogova do e-commerce platformi. Tražim priliku da poboljšam i proširim svoje znanje i vještine u području razvoja i umjetne inteligencije.',
     'hero-resume': 'Životopis',
-    'toolbox-title': 'Moji',
-    'toolbox-subtitle': 'Alati',
     'projects-title': 'Moji Projekti',
     'about-website-title': 'O Ovoj Web Stranici',
     'about-website-description': 'Potpuno putovanje od koncepta do implementacije - dokumentiranje evolucije ovog portfelja',
@@ -495,110 +486,6 @@ class LanguageManager {
 }
 
 // =================================
-// CAROUSEL MANAGER CLASS
-// =================================
-class CarouselManager {
-  constructor() {
-    this.carouselContainer = Utils.$(SELECTORS.carouselContainer);
-    this.carouselContent = Utils.$(SELECTORS.carouselContent);
-    this.observer = null;
-    
-    this.init();
-  }
-
-  init() {
-    if (!this.carouselContent) return;
-    
-    this.setupCarousel();
-    this.setupIntersectionObserver();
-    this.setupEventListeners();
-  }
-
-  setupCarousel() {
-    // Clear existing content
-    this.carouselContent.innerHTML = '';
-    
-    const technologies = [
-      { icon: 'fa-brands fa-python', label: 'Python' },
-      { icon: 'fa-brands fa-github', label: 'GitHub' },
-      { icon: 'fa-brands fa-html5', label: 'HTML5' },
-      { icon: 'fa-brands fa-css3-alt', label: 'CSS3' },
-      { icon: 'fa-brands fa-js', label: 'JavaScript' },
-      { icon: 'fa-brands fa-react', label: 'React' },
-      { icon: 'fa-brands fa-node-js', label: 'Node.js' },
-      { icon: 'fa-brands fa-git-alt', label: 'Git' },
-      { icon: 'fa-solid fa-database', label: 'Database' },
-      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' }
-    ];
-
-    // Create multiple copies for infinite scroll
-    const copies = 3;
-    for (let copy = 0; copy < copies; copy++) {
-      technologies.forEach(tech => {
-        const item = this.createCarouselItem(tech);
-        this.carouselContent.appendChild(item);
-      });
-    }
-  }
-
-  createCarouselItem(tech) {
-    const item = Utils.createElement('div', 'carousel-item');
-    item.innerHTML = `
-      <i class="${tech.icon}" 
-         aria-label="${tech.label}" 
-         title="${tech.label}"></i>
-    `;
-    return item;
-  }
-
-  setupEventListeners() {
-    if (this.carouselContent) {
-      this.carouselContent.addEventListener('mouseenter', () => {
-        this.pauseAnimation();
-      });
-
-      this.carouselContent.addEventListener('mouseleave', () => {
-        this.resumeAnimation();
-      });
-    }
-  }
-
-  setupIntersectionObserver() {
-    if (!this.carouselContainer) return;
-
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.resumeAnimation();
-        } else {
-          this.pauseAnimation();
-        }
-      });
-    }, { threshold: 0.1 });
-
-    this.observer.observe(this.carouselContainer);
-  }
-
-  pauseAnimation() {
-    if (this.carouselContent) {
-      this.carouselContent.style.animationPlayState = 'paused';
-    }
-  }
-
-  resumeAnimation() {
-    if (this.carouselContent) {
-      this.carouselContent.style.animationPlayState = 'running';
-    }
-  }
-
-  destroy() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
-  }
-}
-
-// =================================
 // NAVIGATION MANAGER CLASS
 // =================================
 class NavigationManager {
@@ -754,7 +641,6 @@ class App {
     this.managers.performance = new PerformanceManager();
     this.managers.navigation = new NavigationManager();
     this.managers.language = new LanguageManager();
-    this.managers.carousel = new CarouselManager();
     this.managers.project = new ProjectManager();
 
     // Make project manager globally available for language updates
