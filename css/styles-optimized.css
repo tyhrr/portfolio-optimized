@@ -452,23 +452,138 @@ ul, ol {
   margin-top: var(--spacing-md);
 }
 
-.hero__image {
+.hero__terminal {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.profile-img {
+/* =================================
+   TERMINAL COMPONENT
+   ================================= */
+.terminal {
+  background: #1a1a1a;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  max-width: 500px;
   width: 100%;
-  max-width: 400px;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-xl);
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 14px;
   transition: transform var(--transition-slow);
 }
 
-.profile-img:hover {
-  transform: scale(1.05);
+.terminal:hover {
+  transform: translateY(-5px);
+}
+
+.terminal__header {
+  background: #2d2d2d;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #404040;
+}
+
+.terminal__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal__control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.terminal__control--close {
+  background: #ff5f56;
+}
+
+.terminal__control--minimize {
+  background: #ffbd2e;
+}
+
+.terminal__control--maximize {
+  background: #27ca3f;
+}
+
+.terminal__title {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.terminal__body {
+  padding: 16px;
+  background: #1a1a1a;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.terminal__line {
+  margin-bottom: 8px;
+}
+
+.terminal__prompt {
+  color: #27ca3f;
+  font-weight: 600;
+}
+
+.terminal__command {
+  color: #ffffff;
+  margin-left: 8px;
+}
+
+.terminal__output {
+  margin: 12px 0;
+  padding-left: 0;
+}
+
+.terminal__json {
+  color: #ffffff;
+}
+
+/* JSON Syntax Highlighting */
+.json__bracket {
+  color: #ffbd2e;
+  font-weight: 600;
+}
+
+.json__key {
+  color: #66d9ef;
+  font-weight: 500;
+}
+
+.json__colon {
+  color: #ffffff;
+}
+
+.json__string {
+  color: #a6e22e;
+}
+
+.json__comma {
+  color: #ffffff;
+}
+
+.terminal__cursor {
+  color: #ffffff;
+  animation: terminal-blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes terminal-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 /* =================================
@@ -789,6 +904,30 @@ ul, ol {
   .carousel-item i {
     font-size: var(--font-size-2xl);
   }
+  
+  /* Terminal responsive styles */
+  .terminal {
+    font-size: 12px;
+    max-width: 450px;
+  }
+  
+  .terminal__body {
+    padding: 12px;
+    font-size: 11px;
+  }
+  
+  .terminal__header {
+    padding: 10px 12px;
+  }
+  
+  .terminal__title {
+    font-size: 11px;
+  }
+  
+  .terminal__control {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 /* Mobile */
@@ -846,66 +985,29 @@ ul, ol {
     height: 45px;
     font-size: var(--font-size-lg);
   }
-}
-
-/* Print Styles */
-@media print {
-  .navbar,
-  .language-switcher,
-  .mobile-menu-btn,
-  .skip-link {
-    display: none !important;
+  
+  /* Terminal mobile styles */
+  .terminal {
+    font-size: 11px;
+    max-width: 100%;
+    margin: 0 var(--spacing-xs);
   }
-
-  .hero-section {
-    background: none !important;
-    color: black !important;
+  
+  .terminal__body {
+    padding: 10px;
+    font-size: 10px;
   }
-
-  .hero__title,
-  .toolbox__title,
-  .projects__title {
-    color: black !important;
+  
+  .terminal__header {
+    padding: 8px 10px;
   }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  
+  .terminal__title {
+    font-size: 10px;
   }
-
-  .carousel-content {
-    animation: none !important;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-  :root {
-    --color-border: #ffffff;
-    --color-border-hover: #ffffff;
-    --color-text-secondary: #ffffff;
-    --color-bg-section: #000000;
-  }
-}
-
-/* Dark/Light Theme Preference */
-@media (prefers-color-scheme: light) {
-  [data-theme="auto"] {
-    --color-bg-dark: #ffffff;
-    --color-bg-section: #f8f9fa;
-    --color-text-primary: #1a1a1a;
-    --color-text-secondary: rgba(26, 26, 26, 0.8);
-    --color-border: rgba(26, 26, 26, 0.2);
-    --color-border-hover: rgba(26, 26, 26, 0.3);
+  
+  .terminal__control {
+    width: 8px;
+    height: 8px;
   }
 }
