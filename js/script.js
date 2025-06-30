@@ -63,6 +63,7 @@ const translations = {
     'nav-resume': 'Resume',
     'nav-contact': 'Contact',
     'nav-projects': 'Projects',
+    'nav-about-website': 'About Website',
     'hero-greeting': 'HELLO',
     'hero-intro': "I'm",
     'hero-role': 'Web Developer',
@@ -71,6 +72,9 @@ const translations = {
     'toolbox-title': 'My',
     'toolbox-subtitle': 'Toolbox',
     'projects-title': 'My Projects',
+    'about-website-title': 'About This Website',
+    'about-website-description': 'A complete journey from concept to deployment - documenting the evolution of this portfolio',
+    'tech-stack-title': 'Technologies & Tools Used',
     'loading-text': 'Loading more projects...',
     'see-more': 'See more'
   },
@@ -79,6 +83,7 @@ const translations = {
     'nav-resume': 'Currículum',
     'nav-contact': 'Contacto',
     'nav-projects': 'Proyectos',
+    'nav-about-website': 'Sobre el Sitio',
     'hero-greeting': 'HOLA',
     'hero-intro': 'Soy',
     'hero-role': 'Desarrollador Web',
@@ -87,6 +92,9 @@ const translations = {
     'toolbox-title': 'Mis',
     'toolbox-subtitle': 'Herramientas',
     'projects-title': 'Mis Proyectos',
+    'about-website-title': 'Sobre Este Sitio Web',
+    'about-website-description': 'Un viaje completo desde el concepto hasta el despliegue - documentando la evolución de este portafolio',
+    'tech-stack-title': 'Tecnologías y Herramientas Utilizadas',
     'loading-text': 'Cargando más proyectos...',
     'see-more': 'Ver más'
   },
@@ -95,6 +103,7 @@ const translations = {
     'nav-resume': 'Životopis',
     'nav-contact': 'Kontakt',
     'nav-projects': 'Projekti',
+    'nav-about-website': 'O Web Stranici',
     'hero-greeting': 'POZDRAV',
     'hero-intro': 'Ja sam',
     'hero-role': 'Web Developer',
@@ -103,6 +112,9 @@ const translations = {
     'toolbox-title': 'Moji',
     'toolbox-subtitle': 'Alati',
     'projects-title': 'Moji Projekti',
+    'about-website-title': 'O Ovoj Web Stranici',
+    'about-website-description': 'Potpuno putovanje od koncepta do implementacije - dokumentiranje evolucije ovog portfelja',
+    'tech-stack-title': 'Korištene Tehnologije i Alati',
     'loading-text': 'Učitavam više projekata...',
     'see-more': 'Saznaj više'
   }
