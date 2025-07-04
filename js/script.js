@@ -39,7 +39,7 @@ const projectsData = [
   },
   {
     title: "Personal Portfolio",
-    description: "Personal WebSite, using HTML, CSS, JS",
+    description: "Personal WebSite, using HTML, CSS, JS and hosting in github pages",
     link: "https://github.com/tyhrr/portfolio-optimized",
     technologies: ["HTML", "CSS", "JavaScript"]
   },
