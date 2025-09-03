@@ -589,8 +589,7 @@ class PerformanceManager {
 
   preloadCriticalResources() {
     const criticalImages = [
-      'assets/img/banner.jpg',
-      'assets/img/fotoperfil.png'
+      'assets/img/banner.jpg'
     ];
 
     criticalImages.forEach(src => {
