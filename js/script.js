@@ -11,7 +11,7 @@
 // CONFIGURATION & CONSTANTS
 // =================================
 const CONFIG = {
-  projectsPerLoad: 3,
+  projectsPerLoad: 4,
   loadDelay: 1000,
   defaultLanguage: 'en',
   storageKey: 'selectedLanguage'
