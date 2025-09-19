@@ -48,6 +48,12 @@ const projectsData = [
     description: "Extractor de informacion de CV en formato PDF,PNG,JPG",
     link: "https://github.com/tyhrr/CV_processor",
     technologies: ["Python", "PDF Processing", "OCR"]
+  },
+  {
+    title: "WorkWaveCoast web aplication",
+    description: "Online form website for candidateswho want to work in the Croatian Coast",
+    link:"https://github.com/tyhrr/workwavecoast/blob/main/README.md",
+    technologies: ["JS", "PDF Processing", "HTML", "CSS","MongoDB","Render","GitHub Pages"]
   }
 ];
 
