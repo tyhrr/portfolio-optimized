@@ -1016,7 +1016,7 @@ ul, ol {
 
 .timeline__marker {
   position: absolute;
-  left: 20px;
+  left: 15px;
   top: 5px;
   width: 30px;
   height: 30px;
@@ -1673,7 +1673,7 @@ ul, ol {
   }
   
   .timeline__marker {
-    left: 20px;
+    left: 8px;
     width: 24px;
     height: 24px;
   }
@@ -1707,7 +1707,7 @@ ul, ol {
   }
   
   .timeline__marker {
-    left: -11px;
+    left: 5px;
     width: 20px;
     height: 20px;
     border-width: 2px;
