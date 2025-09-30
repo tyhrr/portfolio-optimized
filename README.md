@@ -10,13 +10,13 @@
 
 ## 🌟 Features
 
-- **🎨 Modern Design**: Clean, professional UI with smooth animations
-- **📱 Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
-- **🌍 Multi-language Support**: Available in English, Spanish, and Croatian
-- **♿ Accessibility First**: WCAG 2.1 compliant with proper ARIA labels
-- **⚡ Performance Optimized**: Fast loading with lazy loading and code splitting
-- **🎯 SEO Friendly**: Optimized meta tags and semantic HTML structure
-- **🎭 Interactive Elements**: Smooth scrolling, hover effects, and dynamic content loading
+- ** Modern Design**: Clean, professional UI with smooth animations
+- ** Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- ** Multi-language Support**: Available in English, Spanish, and Croatian
+- ** Accessibility First**: WCAG 2.1 compliant with proper ARIA labels
+- ** Performance Optimized**: Fast loading with lazy loading and code splitting
+- ** SEO Friendly**: Optimized meta tags and semantic HTML structure
+- ** Interactive Elements**: Smooth scrolling, hover effects, and dynamic content loading
 
 ## 🛠️ Technologies Used
 
@@ -33,16 +33,6 @@
 - **Progressive Enhancement**: Graceful degradation for older browsers
 - **Version Control**: Git and GitHub
 
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Screenshot](assets/screenshots/desktop-view.png)
-
-### Mobile View
-![Mobile Screenshot](assets/screenshots/mobile-view.png)
-
-### Language Switcher
-![Language Switcher](assets/screenshots/language-switcher.png)
 
 ## 🚀 Quick Start
 
@@ -108,9 +98,9 @@ alan-salva-portfolio/
 └── 📄 LICENSE               # MIT License
 ```
 
-## 🎯 Key Features Explained
+## Key Features Explained
 
-### 🌍 Multi-language Support
+### Multi-language Support
 The portfolio supports three languages with persistent language selection:
 - **English (EN)**: Default language
 - **Spanish (ES)**: Complete Spanish translation
@@ -118,7 +108,7 @@ The portfolio supports three languages with persistent language selection:
 
 Language preference is stored in localStorage and remembered between sessions.
 
-### 📱 Responsive Design
+### Responsive Design
 - **Mobile-first approach**: Designed for mobile devices first
 - **Flexible grid system**: Uses CSS Grid and Flexbox
 - **Breakpoints**:
@@ -126,13 +116,13 @@ Language preference is stored in localStorage and remembered between sessions.
   - Tablet: 480px - 768px
   - Desktop: > 768px
 
-### ⚡ Performance Optimizations
+### Performance Optimizations
 - **Lazy loading**: Images load only when needed
 - **Code splitting**: Modules loaded on demand
 - **Optimized assets**: Compressed images and minified code
 - **Caching strategies**: Browser caching for static assets
 
-### ♿ Accessibility Features
+### Accessibility Features
 - **Semantic HTML**: Proper heading hierarchy and landmarks
 - **ARIA labels**: Screen reader friendly
 - **Keyboard navigation**: Full keyboard accessibility
@@ -212,28 +202,12 @@ const projectsData = [
 - **Core Web Vitals**: All metrics in green
 - **Accessibility Score**: 100/100
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-### How to Contribute
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-- Follow the existing code style
-- Add comments for complex logic
-- Test your changes thoroughly
-- Update documentation if needed
-
-## 📝 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+##  Author
 
 **Alan Salva**
 - Portfolio: [alansalva.online](https://alansalva.online)
@@ -241,7 +215,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Email: alangabrielsalva@gmail.com
 - LinkedIn: [Alan Salva](https://linkedin.com/in/alan-salva)
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Font Awesome** for the amazing icons
 - **Google Fonts** for the Poppins font family
@@ -249,15 +223,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **MDN Web Docs** for excellent documentation
 - **Web.dev** for performance best practices
 
-## 📊 Project Stats
 
-- **Lines of Code**: ~2,000
-- **File Size**: ~500KB (total)
-- **Load Time**: < 2 seconds
-- **Supported Languages**: 3
-- **Responsive Breakpoints**: 3
-
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - [ ] Add dark/light theme toggle
 - [ ] Implement PWA features
@@ -268,7 +235,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Add more languages
 - [ ] Include testimonials section
 
-## 🐛 Bug Reports
+## Bug Reports
 
 If you find a bug, please create an issue on GitHub with:
 - Clear description of the problem
@@ -277,7 +244,7 @@ If you find a bug, please create an issue on GitHub with:
 - Browser and device information
 - Screenshots if applicable
 
-## 💡 Feature Requests
+## Feature Requests
 
 Have an idea for a new feature? Please create an issue with:
 - Clear description of the feature
