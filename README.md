@@ -1,6 +1,6 @@
 # Alan Salva — Portfolio
 
-Hi, I'm Alan. I'm a Python developer and data analysis student, and this is my personal portfolio website.
+Hi, I'm Alan. I'm a web developer and customer support specialist, and this is my personal portfolio website.
 
 The site is a simple front-end project built with HTML, CSS, and JavaScript. It showcases my work, background, and contact details in English, Spanish, and Croatian.
 
