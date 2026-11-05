@@ -1,0 +1,618 @@
+/* Alan Salva — portfolio
+   World: an Adriatic nautical chart. Pale deep water, shallow blue,
+   land buff, ink, and chart magenta reserved for the course and the one action. */
+
+:root {
+  --water: #E3EEF3;
+  --water-deep: #D3E3EB;
+  --shoal: #A8CDE0;
+  --land: #E6D59E;
+  --land-edge: #CDB874;
+  --ink: #14212B;
+  --ink-soft: #3B4B57;
+  --magenta: #B0217F;
+  --magenta-deep: #8E1866;
+  --paper: #F4F8FA;
+
+  --serif: "Spectral", Georgia, serif;
+  --label: "Archivo", "Arial Narrow", sans-serif;
+
+  --step--1: clamp(0.84rem, 0.8rem + 0.15vw, 0.92rem);
+  --step-0: clamp(1.02rem, 0.98rem + 0.2vw, 1.14rem);
+  --step-1: clamp(1.3rem, 1.18rem + 0.5vw, 1.6rem);
+  --step-2: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+  --step-3: clamp(2.4rem, 1.9rem + 2.4vw, 4rem);
+  --step-4: clamp(3.2rem, 2.2rem + 4.6vw, 6rem);
+
+  --gutter: clamp(1rem, 0.6rem + 2.2vw, 3rem);
+  --neatline: 10px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  scrollbar-color: var(--ink-soft) var(--water);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--water);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--magenta); color: var(--paper); }
+
+img { display: block; max-width: 100%; height: auto; }
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.1; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  background: var(--ink); color: var(--paper);
+  padding: 0.6rem 1rem; font-family: var(--label); text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- The chart sheet and its graduated neatline ---------- */
+
+.chart {
+  position: relative;
+  margin: 0;
+  --tick: 24px;
+  padding: var(--neatline);
+  /* Graduated chart border: alternating ink and paper minute bars on all four edges. */
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 var(--tick), var(--paper) var(--tick) calc(var(--tick) * 2)) top / 100% var(--neatline) no-repeat,
+    repeating-linear-gradient(90deg, var(--ink) 0 var(--tick), var(--paper) var(--tick) calc(var(--tick) * 2)) bottom / 100% var(--neatline) no-repeat,
+    repeating-linear-gradient(180deg, var(--ink) 0 var(--tick), var(--paper) var(--tick) calc(var(--tick) * 2)) left / var(--neatline) 100% no-repeat,
+    repeating-linear-gradient(180deg, var(--ink) 0 var(--tick), var(--paper) var(--tick) calc(var(--tick) * 2)) right / var(--neatline) 100% no-repeat;
+}
+.chart > * { box-shadow: -1px 0 0 var(--ink), 1px 0 0 var(--ink); }
+
+/* ---------- Top strip ---------- */
+
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 0.8rem var(--gutter);
+  background: var(--water);
+  border-bottom: 1px solid var(--ink);
+}
+
+.topbar__name {
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+}
+
+.topbar__nav { display: flex; gap: 1.6rem; align-items: center; }
+
+.topbar__nav a,
+.lang__btn {
+  font-family: var(--label);
+  font-stretch: 78%;
+  font-weight: 600;
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.topbar__nav a:hover { text-decoration: underline; }
+.topbar__cv { border-bottom: 1px solid var(--ink); }
+
+.lang { display: flex; border: 1px solid var(--ink); }
+
+.lang__btn {
+  appearance: none; border: 0; margin: 0; cursor: pointer;
+  background: transparent; color: var(--ink);
+  min-width: 2.75rem; min-height: 2.25rem; padding: 0 0.6rem;
+}
+.lang__btn + .lang__btn { border-left: 1px solid var(--ink); }
+.lang__btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.lang__btn:not([aria-pressed="true"]):hover { background: var(--water-deep); }
+
+/* ---------- Opening chart ---------- */
+
+.hero {
+  position: relative;
+  min-height: clamp(640px, 58vw, 880px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* The chart field. Desktop: spread behind the cartouche and portrait. Phones: its own band. */
+.hero__chart { position: absolute; inset: 0; z-index: 0; }
+
+.sea, .course { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sea--tall, .course--tall { display: none; }
+
+.sea .shoal { fill: var(--shoal); opacity: 0.55; }
+.sea .contour { fill: none; stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 6; opacity: 0.5; }
+.sea .land { fill: var(--land); stroke: var(--ink); stroke-width: 1.4; stroke-linejoin: round; }
+.sea .soundings text {
+  font-family: var(--serif); font-style: italic; font-size: 15px;
+  fill: var(--ink-soft);
+}
+.sea .water-name {
+  font-family: var(--serif); font-style: italic; font-size: 26px;
+  letter-spacing: 0.16em; fill: var(--ink);
+}
+.sea .land-name {
+  font-family: var(--serif); font-size: 15px; font-weight: 600;
+  letter-spacing: 0.32em; fill: var(--ink);
+}
+.sea .rose circle { fill: none; stroke: var(--ink); stroke-width: 1; }
+.sea .rose circle + circle { stroke-dasharray: 1 4; }
+.sea .rose__point { fill: var(--paper); stroke: var(--ink); stroke-width: 1; stroke-linejoin: round; }
+.sea .rose__point--dark { fill: var(--ink); }
+.sea .rose__n { font-family: var(--serif); font-size: 16px; font-weight: 600; text-anchor: middle; fill: var(--ink); }
+
+.course polyline {
+  fill: none;
+  stroke: var(--magenta);
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+
+.hero__inner {
+  position: relative;
+  min-height: inherit;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding: clamp(2rem, 5vh, 4.5rem) var(--gutter) 0;
+}
+.cartouche, .inset--portrait { position: relative; z-index: 1; }
+
+/* Title cartouche, set like the title block of a chart */
+.cartouche {
+  grid-column: 1 / span 7;
+  align-self: start;
+  max-width: 44rem;
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  outline: 1px solid var(--ink);
+  outline-offset: 5px;
+  margin: 6px;
+}
+
+.cartouche__name {
+  font-size: var(--step-4);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.cartouche__role {
+  margin-top: 0.9rem;
+  font-size: var(--step-2);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.cartouche__intro {
+  margin-top: 1.4rem;
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+
+.cartouche__actions {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.75rem 1.5rem; margin-top: 1.8rem;
+}
+
+.btn {
+  font-family: var(--label);
+  font-stretch: 85%;
+  font-weight: 600;
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 2.9rem;
+}
+
+.btn--primary {
+  background: var(--magenta); color: var(--paper);
+  padding: 0 1.4rem;
+  transition: background-color 200ms var(--ease-out);
+}
+.btn--primary:hover { background: var(--magenta-deep); }
+
+.btn--plain { border-bottom: 1px solid var(--ink); min-height: auto; padding-bottom: 0.15rem; }
+.btn--plain:hover { color: var(--magenta-deep); border-color: var(--magenta-deep); }
+
+/* Chart insets: portrait and project screenshots */
+.inset {
+  margin: 6px;
+  position: relative;
+  background: var(--water-deep);
+  border: 1px solid var(--ink);
+  outline: 1px solid var(--ink);
+  outline-offset: 5px;
+}
+
+.inset__label {
+  position: absolute; left: 0; bottom: 0;
+  background: var(--paper);
+  border-top: 1px solid var(--ink); border-right: 1px solid var(--ink);
+  padding: 0.25rem 0.6rem;
+  font-family: var(--label); font-stretch: 78%; font-weight: 600;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+.inset--portrait {
+  grid-column: 9 / span 4;
+  grid-row: 1;
+  align-self: start;
+  max-width: 22rem;
+  justify-self: end;
+  width: 100%;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(20, 33, 43, 0.12) 27px 28px),
+    var(--shoal);
+}
+.inset--portrait img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; }
+
+/* Waypoints: the projects on the course */
+.waypoints { list-style: none; margin: 0; padding: 0; }
+
+/* Each waypoint's mark sits exactly on its course vertex; the name hangs beside or below it. */
+.waypoint {
+  position: absolute; left: var(--x); top: var(--y);
+  transform: translate(-1.05rem, -50%);
+}
+.waypoint a {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  text-decoration: none; white-space: nowrap;
+}
+.waypoint--left { transform: translate(calc(-100% + 1.05rem), -50%); }
+.waypoint--left a { flex-direction: row-reverse; }
+.waypoint--below { transform: translate(-50%, -1.05rem); }
+.waypoint--below a { flex-direction: column; gap: 0.3rem; }
+.waypoint--below .waypoint__name { transform: none; }
+
+.waypoint--1 { --x: 18%; --y: 90%; }
+.waypoint--2 { --x: 54%; --y: 88%; }
+.waypoint--3 { --x: 58%; --y: 56%; }
+
+.waypoint__mark {
+  display: grid; place-items: center;
+  width: 2.1rem; height: 2.1rem; border-radius: 50%;
+  border: 2px solid var(--magenta);
+  background: var(--water);
+  color: var(--magenta-deep);
+  font-family: var(--label); font-weight: 700; font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out), transform 300ms var(--ease-out);
+}
+
+.waypoint__name {
+  font-family: var(--serif); font-style: italic; font-size: var(--step-0);
+  background: color-mix(in srgb, var(--water) 85%, transparent);
+  padding: 0 0.3rem;
+  transform: translateY(-1.4rem);
+}
+
+.waypoint a:hover .waypoint__mark,
+.waypoint a:focus-visible .waypoint__mark,
+.waypoint.is-lit .waypoint__mark {
+  background: var(--magenta); color: var(--paper); transform: scale(1.12);
+}
+
+/* ---------- Section heads ---------- */
+
+.section-head {
+  display: grid; gap: 0.6rem;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  max-width: 48rem;
+}
+.section-head h2 {
+  font-size: var(--step-3);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+.section-head p { color: var(--ink-soft); font-style: italic; font-size: var(--step-1); line-height: 1.4; }
+
+/* ---------- Projects ---------- */
+
+.projects {
+  padding: clamp(4rem, 9vw, 8rem) var(--gutter) clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--ink);
+}
+
+.projects__list { display: grid; gap: clamp(3.5rem, 8vw, 7rem); }
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: center;
+}
+
+.project__shot { grid-column: 1 / span 7; }
+.project__body { grid-column: 8 / span 5; }
+.project:nth-child(even) .project__shot { grid-column: 6 / span 7; grid-row: 1; }
+.project:nth-child(even) .project__body { grid-column: 1 / span 5; grid-row: 1; }
+
+.project__shot {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.project__shot img { width: 100%; height: 100%; object-fit: cover; }
+.project__shot.is-empty {
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 11px, rgba(20, 33, 43, 0.09) 11px 12px),
+    var(--water-deep);
+}
+
+.project__head { display: flex; align-items: baseline; gap: 0.9rem; }
+
+.project__mark {
+  flex: none;
+  display: grid; place-items: center;
+  width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  border: 2px solid var(--magenta); color: var(--magenta-deep);
+  font-family: var(--label); font-weight: 700; font-variant-numeric: tabular-nums;
+  transform: translateY(-0.2rem);
+  transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out);
+}
+.project.is-lit .project__mark { background: var(--magenta); color: var(--paper); }
+
+.project__title { font-size: var(--step-2); font-weight: 400; letter-spacing: -0.01em; }
+
+.project__desc { margin-top: 1rem; max-width: 46ch; }
+
+.project__stack {
+  margin-top: 1.2rem;
+  font-family: var(--label); font-stretch: 80%; font-weight: 500;
+  font-size: var(--step--1); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.project__link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 1.4rem;
+  font-family: var(--label); font-stretch: 85%; font-weight: 600;
+  font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 0.15rem;
+}
+.project__link svg { width: 0.85rem; height: 0.85rem; transition: transform 250ms var(--ease-out); }
+.project__link:hover { color: var(--magenta-deep); border-color: var(--magenta-deep); }
+.project__link:hover svg { transform: translate(2px, -2px); }
+
+.noscript { margin-top: 1rem; }
+
+/* ---------- Experience log ---------- */
+
+.log {
+  padding: clamp(4rem, 8vw, 7rem) var(--gutter);
+  background: var(--paper);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+
+.log .section-head { grid-column: 1 / -1; }
+
+.log__entries {
+  grid-column: 1 / span 8;
+  list-style: none; margin: 0; padding: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.log__entry {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid rgba(20, 33, 43, 0.35);
+}
+
+.log__when {
+  font-family: var(--label); font-stretch: 80%; font-weight: 600;
+  font-size: var(--step--1); letter-spacing: 0.06em; text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.3rem;
+}
+
+.log__what h3 { font-size: var(--step-1); font-weight: 600; line-height: 1.25; }
+.log__at { font-weight: 400; font-style: italic; color: var(--ink-soft); }
+.log__what p { margin-top: 0.5rem; max-width: 62ch; color: var(--ink-soft); }
+
+.log__aside {
+  grid-column: 10 / span 3;
+  display: grid; gap: 2.5rem; align-content: start;
+}
+
+.log__block h3 {
+  font-family: var(--label); font-stretch: 78%; font-weight: 700;
+  font-size: var(--step--1); letter-spacing: 0.12em; text-transform: uppercase;
+  padding-bottom: 0.6rem; margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.plain-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; font-size: var(--step--1); line-height: 1.45; }
+.plain-list__when {
+  font-family: var(--label); font-stretch: 80%; font-weight: 600;
+  font-variant-numeric: tabular-nums; margin-right: 0.35rem;
+}
+.plain-list__note { font-style: italic; color: var(--ink-soft); }
+
+.tools { font-size: var(--step--1); line-height: 1.7; }
+
+/* ---------- Landfall: contact ---------- */
+
+.landfall { position: relative; background: var(--land); }
+
+.landfall__coast {
+  display: block; width: 100%; height: auto; aspect-ratio: 12 / 1;
+  margin-top: -1px;
+  background: var(--water);
+}
+.landfall__land { fill: var(--land); }
+.landfall__islet { stroke: var(--ink); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.landfall__coast--tall { display: none; aspect-ratio: 375 / 90; }
+.landfall__contour { fill: none; stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 6; opacity: 0.5; vector-effect: non-scaling-stroke; }
+.landfall__shore { fill: none; stroke-linejoin: round; stroke: var(--ink); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+
+.landfall__inner { padding: clamp(2.5rem, 6vw, 5rem) var(--gutter) 2rem; }
+
+.landfall h2 {
+  font-size: var(--step-3); font-weight: 300; letter-spacing: -0.02em;
+}
+
+.landfall__lead { margin-top: 0.8rem; font-style: italic; font-size: var(--step-1); color: var(--ink-soft); }
+
+.landfall__email {
+  display: inline-block;
+  margin-top: 1.8rem;
+  font-size: clamp(1.5rem, 0.9rem + 3.4vw, 4.4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-decoration-color: var(--magenta);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+.landfall__email:hover { color: var(--magenta-deep); }
+
+.landfall__links {
+  list-style: none; margin: 2.5rem 0 0; padding: 1.2rem 0 0;
+  border-top: 1px solid var(--ink);
+  display: flex; flex-wrap: wrap; gap: 0.8rem 2rem;
+}
+.landfall__links a {
+  font-family: var(--label); font-stretch: 85%; font-weight: 600;
+  font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none;
+}
+.landfall__links a:hover { text-decoration: underline; }
+
+.colophon {
+  margin-top: clamp(3rem, 7vw, 6rem);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem;
+  font-size: var(--step--1); font-style: italic; color: var(--ink-soft);
+}
+
+/* ---------- Motion: the course is drawn once ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .course {
+    animation: plot 2.4s var(--ease-out) 0.3s backwards;
+  }
+  .js .waypoint__mark { animation: fix 700ms var(--ease-out) backwards; }
+  .js .waypoint--1 .waypoint__mark { animation-delay: 0.9s; }
+  .js .waypoint--2 .waypoint__mark { animation-delay: 1.4s; }
+  .js .waypoint--3 .waypoint__mark { animation-delay: 1.9s; }
+}
+
+/* The course is plotted west to east; the line itself stays visible once drawn. */
+@keyframes plot { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+/* Each fix lands with a brief magenta flash; the mark is visible throughout. */
+@keyframes fix {
+  0% { background: var(--magenta); color: var(--paper); transform: scale(1.25); }
+  100% { background: var(--water); color: var(--magenta-deep); transform: scale(1); }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  .cartouche { grid-column: 1 / span 8; }
+  .inset--portrait { grid-column: 9 / span 4; }
+  .log__entries { grid-column: 1 / -1; }
+  .log__aside { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 3rem; }
+}
+
+@media (max-width: 820px) {
+  :root { --neatline: 6px; }
+  .chart { --tick: 16px; }
+
+  .topbar { flex-wrap: wrap; row-gap: 0.6rem; }
+  .topbar__nav { order: 3; width: 100%; gap: 1.2rem; justify-content: space-between; }
+
+  .hero { min-height: auto; }
+  .hero__inner { display: flex; flex-direction: column; padding-bottom: 2rem; }
+  .cartouche { max-width: none; }
+  .hero__inner { padding-top: 1.5rem; }
+  .inset--portrait { align-self: flex-start; max-width: 9.5rem; margin: 0 0 1.5rem 6px; order: -1; }
+  /* The chart becomes its own portrait band under the cartouche: Río de la Plata at the foot, the Adriatic at the head. */
+  .hero__chart { position: relative; inset: auto; aspect-ratio: 375 / 540; margin: 2rem calc(var(--gutter) * -1) 0; }
+  .sea--wide, .course--wide { display: none; }
+  .landfall__coast--wide { display: none; }
+  .landfall__coast--tall { display: block; }
+  .sea--tall, .course--tall { display: block; }
+
+  .waypoint--1 { --x: 24%; --y: 80%; }
+  .waypoint--2 { --x: 64%; --y: 64%; }
+  .waypoint--3 { --x: 30%; --y: 48%; }
+  .sea--tall .water-name { font-size: 20px; letter-spacing: 0.14em; }
+  .sea--tall .land-name { font-size: 12px; letter-spacing: 0.24em; }
+  .waypoint--2 { transform: translate(calc(-100% + 1.05rem), -50%); }
+  .waypoint--2 a { flex-direction: row-reverse; }
+  .waypoint--3 { transform: translate(-1.05rem, -50%); }
+  .waypoint--3 a { flex-direction: row; gap: 0.55rem; }
+  .waypoint--3 .waypoint__name { transform: translateY(-1.4rem); }
+
+  .project { display: flex; flex-direction: column; align-items: stretch; gap: 1.5rem; }
+  .project:nth-child(even) .project__shot { order: 0; }
+
+  .log { display: block; }
+  .log__aside { grid-template-columns: 1fr; }
+  .log__entry { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+
+@media (max-width: 480px) {
+  .topbar__cv { display: none; }
+  .topbar__nav { justify-content: flex-start; gap: 1.4rem; }
+}
+
+@media (max-width: 420px) {
+  .topbar__nav a { letter-spacing: 0.06em; }
+  .cartouche { padding: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}

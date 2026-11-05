@@ -28,7 +28,7 @@ README.md
 ## Notes
 
 - The language is saved in the browser using local storage.
-- Main styling is in `css/styles-optimized.css`.
+- Main styling is in `css/styles.css`.
 - Most content and translations live in `js/script.js`.
 
 ## License

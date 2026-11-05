@@ -1,66 +1,23 @@
 /**
- * ALAN SALVA PORTFOLIO
- * Author: Alan Salva
- * Version: 2.1.0
+ * Alan Salva — portfolio
+ * Language switching (EN / ES / HR), project rendering and the chart's waypoint links.
  */
 
 'use strict';
 
-// =================================
-// CONFIGURATION & CONSTANTS
-// =================================
 const CONFIG = {
   defaultLanguage: 'en',
   supportedLanguages: ['en', 'es', 'hr'],
   storageKey: 'selectedLanguage'
 };
 
-const SELECTORS = {
-  projectsGrid: '#projects-grid',
-  projectsCount: '#stat-projects-count',
-  currentLangBtn: '#currentLang',
-  langDropdown: '#langDropdown',
-  languageSwitcher: '.language-switcher',
-  navbar: '#navbar',
-  mobileMenuBtn: '#mobile-menu-btn',
-  navbarMenu: '#navbar-menu'
-};
-
 // =================================
-// PROJECT DATA (descriptions per language)
+// PROJECTS
+// Screenshots: drop a cover.png into assets/img/projects/<slug>/ and it appears.
 // =================================
 const projectsData = [
   {
-    title: 'Web Scraping – Tugurium',
-    link: 'https://github.com/tyhrr/script-web',
-    technologies: ['Python', 'BeautifulSoup', 'Pandas', 'Git'],
-    description: {
-      en: 'Scraper for a static website built with Requests, BeautifulSoup and Pandas.',
-      es: 'Scraper de un sitio web estático hecho con Requests, BeautifulSoup y Pandas.',
-      hr: 'Scraper statične web stranice izrađen s Requests, BeautifulSoup i Pandas.'
-    }
-  },
-  {
-    title: 'Personal Portfolio',
-    link: 'https://github.com/tyhrr/portfolio-optimized',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    description: {
-      en: 'This website: hand-coded HTML, CSS and JavaScript in three languages, hosted on GitHub Pages.',
-      es: 'Este sitio web: HTML, CSS y JavaScript escritos a mano, en tres idiomas y alojado en GitHub Pages.',
-      hr: 'Ova web stranica: ručno pisani HTML, CSS i JavaScript na tri jezika, hostana na GitHub Pages.'
-    }
-  },
-  {
-    title: 'CV Processor',
-    link: 'https://github.com/tyhrr/CV_processor',
-    technologies: ['Python', 'PDF Processing', 'OCR'],
-    description: {
-      en: 'Extracts information from CVs in PDF, PNG and JPG format.',
-      es: 'Extrae información de currículums en formato PDF, PNG y JPG.',
-      hr: 'Izvlači podatke iz životopisa u PDF, PNG i JPG formatu.'
-    }
-  },
-  {
+    slug: 'workwavecoast',
     title: 'WorkWaveCoast',
     link: 'https://github.com/tyhrr/workwavecoast',
     technologies: ['JavaScript', 'HTML', 'CSS', 'MongoDB', 'Render', 'GitHub Pages'],
@@ -69,29 +26,58 @@ const projectsData = [
       es: 'Aplicación web con un formulario de postulación para candidatos que quieren trabajar en la costa croata.',
       hr: 'Web aplikacija s online obrascem za kandidate koji žele raditi na hrvatskoj obali.'
     }
+  },
+  {
+    slug: 'cv-processor',
+    title: 'CV Processor',
+    link: 'https://github.com/tyhrr/CV_processor',
+    technologies: ['Python', 'PDF', 'OCR'],
+    description: {
+      en: 'Extracts information from CVs in PDF, PNG and JPG format.',
+      es: 'Extrae información de currículums en formato PDF, PNG y JPG.',
+      hr: 'Izvlači podatke iz životopisa u PDF, PNG i JPG formatu.'
+    }
+  },
+  {
+    slug: 'tugurium-scraper',
+    title: 'Tugurium scraper',
+    link: 'https://github.com/tyhrr/script-web',
+    technologies: ['Python', 'Requests', 'BeautifulSoup', 'Pandas'],
+    description: {
+      en: 'Scraper for a static website built with Requests, BeautifulSoup and Pandas.',
+      es: 'Scraper de un sitio web estático hecho con Requests, BeautifulSoup y Pandas.',
+      hr: 'Scraper statične web stranice izrađen s Requests, BeautifulSoup i Pandas.'
+    }
   }
 ];
 
 // =================================
-// TRANSLATION DATA
+// TRANSLATIONS
 // =================================
 const translations = {
   en: {
+    'chart-land-east': 'CROATIA',
+    'plan-label': 'Plan {n} · {title}',
+    'plan-pending': 'Plan {n} · survey pending',
+    'page-title': 'Alan Salva | Technical Support & Python Developer',
     'skip-link': 'Skip to main content',
-    'nav-motivation': 'Motivation Letter',
-    'nav-certifications': 'Certifications',
-    'nav-contact': 'Contact',
-    'nav-about-me': 'About Me',
     'nav-projects': 'Projects',
-    'nav-about-website': 'About Website',
-    'hero-intro': "I'm",
-    'hero-role': 'a Python & Web Developer',
-    'hero-description': "Welcome to my portfolio! I'm Alan, a Python and web developer based in Croatia and a data analysis student. I've worked on web projects ranging from personal blogs to e-commerce platforms, and I'm looking for an opportunity to keep growing in software development and artificial intelligence.",
-    'hero-resume': 'Download CV',
-    'about-me-title': 'About Me',
-    'about-me-description': "I'm a web developer who enjoys turning ideas into functional, easy-to-use digital products. I've built dynamic websites, e-commerce platforms and data-driven tools with JavaScript and Python, and I'm currently deepening my Python skills and exploring how to integrate AI into web projects.",
-    'work-experience-title': 'Work Experience',
-    'exp-mmk-period': 'Jan 2026 – Present',
+    'nav-experience': 'Experience',
+    'nav-contact': 'Contact',
+    'nav-cv': 'CV (PDF)',
+    'chart-west': 'Río de la Plata',
+    'chart-east': 'Adriatic Sea',
+    'chart-inset': 'Plan A · Croatia',
+    'hero-role': 'Technical support who also writes the fix.',
+    'hero-intro': "I support customers of Booking Manager, MMK Systems' yacht charter software, and I build tools in Python and JavaScript: scrapers, a CV parser, web apps. I studied materials engineering in Argentina and now work from Croatia in Spanish, English and some Croatian.",
+    'hero-cta': 'Write to me',
+    'hero-cv': 'Read my CV (PDF)',
+    'projects-title': 'Projects',
+    'projects-intro': 'Three things I built along the way.',
+    'project-code': 'Code on GitHub',
+    'project-shot-alt': 'Screenshot of {title}',
+    'experience-title': 'Experience',
+    'exp-mmk-period': 'Jan 2026 – present',
     'exp-mmk-title': 'Customer Support Specialist',
     'exp-mmk-desc': "Technical and customer support for Booking Manager, MMK Systems' yacht charter management software. Resolving client cases, configuring prices and contract templates, and reporting bugs to the development team through Jira.",
     'exp1-title': 'Web Developer & Designer',
@@ -101,63 +87,57 @@ const translations = {
     'exp2-desc': 'Designed and built websites and developed Python tools, including Selenium-based scrapers that extract information from external web applications.',
     'exp3-title': 'Support Specialist / Technical Assistant',
     'exp3-desc': 'Managed tasks, assisted customers, provided technical support and ensured smooth product implementation. Strong communication and troubleshooting skills.',
-    'education-title': 'Education',
+    'education-title': 'Training',
     'edu1-title': 'Development with Python',
     'edu2-title': 'Full-stack Development',
     'edu3-title': 'Network Administrator',
     'edu3-institution': 'Municipal Labor Office',
-    'edu3-desc': 'Secretariat of Innovation, Production and Employment.',
     'edu4-title': 'Materials Engineering',
-    'skills-title': 'Skills & Technologies',
-    'skills-languages': 'Programming Languages',
-    'skills-tools': 'Frameworks & Tools',
-    'skills-specializations': 'Specializations',
-    'spec-web': 'Web Development',
-    'spec-data': 'Data Analysis',
-    'spec-scraping': 'Web Scraping',
-    'spec-support': 'Technical Support',
     'languages-title': 'Languages',
     'lang-spanish': 'Spanish',
     'lang-english': 'English',
-    'level-native': 'Native',
-    'level-advanced': 'Advanced',
-    'projects-title': 'My Projects',
-    'about-website-title': 'About This Website',
-    'about-website-description': 'A hand-coded, framework-free site: semantic HTML, modern CSS and vanilla JavaScript, available in three languages and hosted on GitHub Pages.',
-    'stat-languages': 'Site languages',
-    'stat-frameworks': 'Frameworks',
-    'stat-projects': 'Featured projects',
-    'tech-stack-title': 'Technologies & Tools Used',
-    'see-more': 'View on GitHub',
-    'new-tab': 'opens in a new tab',
-    // aria-labels
-    'aria-main-nav': 'Main navigation',
+    'lang-croatian': 'Croatian',
+    'level-native': 'native',
+    'level-advanced': 'advanced',
+    'level-basic': 'basic',
+    'tools-title': 'Tools',
+    'contact-title': "Let's talk",
+    'contact-lead': 'Email is the quickest way to reach me.',
+    'link-cv': 'CV (PDF)',
+    'link-motivation': 'Motivation letter (PDF)',
+    'link-certifications': 'Certifications (PDF)',
+    'colophon': 'Hand-coded in HTML, CSS and JavaScript, in three languages, no frameworks.',
+    'new-tab-paren': ' (opens in a new tab)',
+    'alt-portrait': 'Portrait of Alan Salva',
+    'whatsapp-text': 'Hi Alan, I saw your portfolio and would like to get in touch.',
     'aria-home': 'Alan Salva — back to top',
-    'aria-language': 'Language: English',
-    'aria-open-menu': 'Open menu',
-    'aria-close-menu': 'Close menu',
-    'aria-social': 'Contact and social links',
-    'aria-whatsapp': 'WhatsApp (opens in a new tab)',
-    'aria-email': 'Email',
-    'aria-linkedin': 'LinkedIn (opens in a new tab)',
-    'aria-github': 'GitHub (opens in a new tab)'
+    'aria-main-nav': 'Main navigation',
+    'aria-language': 'Language',
+    'aria-waypoints': 'Projects on the chart'
   },
   es: {
+    'chart-land-east': 'CROACIA',
+    'plan-label': 'Plano {n} · {title}',
+    'plan-pending': 'Plano {n} · relevamiento pendiente',
+    'page-title': 'Alan Salva | Soporte técnico y desarrollo Python',
     'skip-link': 'Saltar al contenido principal',
-    'nav-motivation': 'Carta de motivación',
-    'nav-certifications': 'Certificaciones',
-    'nav-contact': 'Contacto',
-    'nav-about-me': 'Sobre mí',
     'nav-projects': 'Proyectos',
-    'nav-about-website': 'Sobre el sitio',
-    'hero-intro': 'Soy',
-    'hero-role': 'desarrollador Python y web',
-    'hero-description': '¡Bienvenido a mi portafolio! Soy Alan, desarrollador Python y web radicado en Croacia y estudiante de análisis de datos. He trabajado en proyectos web que van desde blogs personales hasta plataformas de comercio electrónico, y busco una oportunidad para seguir creciendo en desarrollo de software e inteligencia artificial.',
-    'hero-resume': 'Descargar CV',
-    'about-me-title': 'Sobre mí',
-    'about-me-description': 'Soy desarrollador web y disfruto convirtiendo ideas en productos digitales funcionales y fáciles de usar. He construido sitios web dinámicos, plataformas de e-commerce y herramientas basadas en datos con JavaScript y Python, y actualmente estoy profundizando en Python y explorando cómo integrar IA en proyectos web.',
-    'work-experience-title': 'Experiencia laboral',
-    'exp-mmk-period': 'Ene 2026 – Actualidad',
+    'nav-experience': 'Trayectoria',
+    'nav-contact': 'Contacto',
+    'nav-cv': 'CV (PDF)',
+    'chart-west': 'Río de la Plata',
+    'chart-east': 'Mar Adriático',
+    'chart-inset': 'Plano A · Croacia',
+    'hero-role': 'Soporte técnico que también escribe la solución.',
+    'hero-intro': 'Doy soporte a los clientes de Booking Manager, el software de chárter náutico de MMK Systems, y construyo herramientas en Python y JavaScript: scrapers, un procesador de CVs, aplicaciones web. Estudié ingeniería en materiales en Argentina y hoy trabajo desde Croacia en español, inglés y algo de croata.',
+    'hero-cta': 'Escríbeme',
+    'hero-cv': 'Ver mi CV (PDF)',
+    'projects-title': 'Proyectos',
+    'projects-intro': 'Tres cosas que construí por el camino.',
+    'project-code': 'Código en GitHub',
+    'project-shot-alt': 'Captura de {title}',
+    'experience-title': 'Trayectoria',
+    'exp-mmk-period': 'Ene 2026 – actualidad',
     'exp-mmk-title': 'Especialista en atención al cliente',
     'exp-mmk-desc': 'Soporte técnico y atención al cliente de Booking Manager, el software de gestión de chárter náutico de MMK Systems. Resolución de casos de clientes, configuración de precios y plantillas de contrato, y reporte de errores al equipo de desarrollo mediante Jira.',
     'exp1-title': 'Desarrollador y diseñador web',
@@ -167,61 +147,56 @@ const translations = {
     'exp2-desc': 'Diseñé y construí sitios web y desarrollé herramientas en Python, entre ellas scrapers con Selenium que extraen información de aplicaciones web externas.',
     'exp3-title': 'Especialista de soporte / Asistente técnico',
     'exp3-desc': 'Gestión de tareas, atención a clientes, soporte técnico y acompañamiento en la implementación de productos. Buenas habilidades de comunicación y resolución de problemas.',
-    'education-title': 'Educación',
+    'education-title': 'Formación',
     'edu1-title': 'Desarrollo con Python',
     'edu2-title': 'Desarrollo full-stack',
     'edu3-title': 'Administrador de redes',
     'edu3-institution': 'Oficina Municipal de Empleo',
-    'edu3-desc': 'Secretaría de Innovación, Producción y Empleo.',
     'edu4-title': 'Ingeniería en Materiales',
-    'skills-title': 'Habilidades y tecnologías',
-    'skills-languages': 'Lenguajes de programación',
-    'skills-tools': 'Frameworks y herramientas',
-    'skills-specializations': 'Especializaciones',
-    'spec-web': 'Desarrollo web',
-    'spec-data': 'Análisis de datos',
-    'spec-scraping': 'Web scraping',
-    'spec-support': 'Soporte técnico',
     'languages-title': 'Idiomas',
     'lang-spanish': 'Español',
     'lang-english': 'Inglés',
-    'level-native': 'Nativo',
-    'level-advanced': 'Avanzado',
-    'projects-title': 'Mis proyectos',
-    'about-website-title': 'Sobre este sitio web',
-    'about-website-description': 'Un sitio hecho a mano y sin frameworks: HTML semántico, CSS moderno y JavaScript puro, disponible en tres idiomas y alojado en GitHub Pages.',
-    'stat-languages': 'Idiomas del sitio',
-    'stat-frameworks': 'Frameworks',
-    'stat-projects': 'Proyectos destacados',
-    'tech-stack-title': 'Tecnologías y herramientas utilizadas',
-    'see-more': 'Ver en GitHub',
-    'new-tab': 'se abre en una pestaña nueva',
-    'aria-main-nav': 'Navegación principal',
+    'lang-croatian': 'Croata',
+    'level-native': 'nativo',
+    'level-advanced': 'avanzado',
+    'level-basic': 'básico',
+    'tools-title': 'Herramientas',
+    'contact-title': 'Hablemos',
+    'contact-lead': 'El correo es la forma más rápida de contactarme.',
+    'link-cv': 'CV (PDF)',
+    'link-motivation': 'Carta de motivación (PDF)',
+    'link-certifications': 'Certificaciones (PDF)',
+    'colophon': 'Hecho a mano en HTML, CSS y JavaScript, en tres idiomas y sin frameworks.',
+    'new-tab-paren': ' (se abre en una pestaña nueva)',
+    'alt-portrait': 'Retrato de Alan Salva',
+    'whatsapp-text': 'Hola Alan, vi tu portafolio y me gustaría contactarte.',
     'aria-home': 'Alan Salva — volver arriba',
-    'aria-language': 'Idioma: español',
-    'aria-open-menu': 'Abrir menú',
-    'aria-close-menu': 'Cerrar menú',
-    'aria-social': 'Contacto y redes',
-    'aria-whatsapp': 'WhatsApp (se abre en una pestaña nueva)',
-    'aria-email': 'Correo electrónico',
-    'aria-linkedin': 'LinkedIn (se abre en una pestaña nueva)',
-    'aria-github': 'GitHub (se abre en una pestaña nueva)'
+    'aria-main-nav': 'Navegación principal',
+    'aria-language': 'Idioma',
+    'aria-waypoints': 'Proyectos en la carta'
   },
   hr: {
+    'chart-land-east': 'HRVATSKA',
+    'plan-label': 'Plan {n} · {title}',
+    'plan-pending': 'Plan {n} · snimanje u tijeku',
+    'page-title': 'Alan Salva | Tehnička podrška i Python razvoj',
     'skip-link': 'Preskoči na glavni sadržaj',
-    'nav-motivation': 'Motivacijsko pismo',
-    'nav-certifications': 'Certifikati',
-    'nav-contact': 'Kontakt',
-    'nav-about-me': 'O meni',
     'nav-projects': 'Projekti',
-    'nav-about-website': 'O stranici',
-    'hero-intro': 'Ja sam',
-    'hero-role': 'Python i web developer',
-    'hero-description': 'Dobrodošli u moj portfolio! Ja sam Alan, Python i web developer sa sjedištem u Hrvatskoj i student analize podataka. Radio sam na web projektima od osobnih blogova do e-commerce platformi i tražim priliku za daljnji razvoj u razvoju softvera i umjetnoj inteligenciji.',
-    'hero-resume': 'Preuzmi životopis',
-    'about-me-title': 'O meni',
-    'about-me-description': 'Web developer sam koji voli pretvarati ideje u funkcionalne digitalne proizvode jednostavne za korištenje. Izrađivao sam dinamične web stranice, e-commerce platforme i alate temeljene na podacima u JavaScriptu i Pythonu, a trenutno produbljujem znanje Pythona i istražujem kako integrirati umjetnu inteligenciju u web projekte.',
-    'work-experience-title': 'Radno iskustvo',
+    'nav-experience': 'Iskustvo',
+    'nav-contact': 'Kontakt',
+    'nav-cv': 'Životopis (PDF)',
+    'chart-west': 'Río de la Plata',
+    'chart-east': 'Jadransko more',
+    'chart-inset': 'Plan A · Hrvatska',
+    'hero-role': 'Tehnička podrška koja sama napiše i rješenje.',
+    'hero-intro': 'Pružam podršku korisnicima Booking Managera, softvera tvrtke MMK Systems za čarter plovila, i izrađujem alate u Pythonu i JavaScriptu: scrapere, obradu životopisa, web aplikacije. Studirao sam inženjerstvo materijala u Argentini, a danas radim iz Hrvatske na španjolskom, engleskom i pomalo hrvatskom.',
+    'hero-cta': 'Pišite mi',
+    'hero-cv': 'Pogledajte životopis (PDF)',
+    'projects-title': 'Projekti',
+    'projects-intro': 'Tri stvari koje sam izgradio usput.',
+    'project-code': 'Kôd na GitHubu',
+    'project-shot-alt': 'Snimka zaslona: {title}',
+    'experience-title': 'Iskustvo',
     'exp-mmk-period': 'Sij 2026. – danas',
     'exp-mmk-title': 'Specijalist za korisničku podršku',
     'exp-mmk-desc': 'Tehnička i korisnička podrška za Booking Manager, softver tvrtke MMK Systems za upravljanje čarterom plovila. Rješavanje korisničkih slučajeva, postavljanje cijena i predložaka ugovora te prijava grešaka razvojnom timu putem Jire.',
@@ -237,348 +212,195 @@ const translations = {
     'edu2-title': 'Full-stack razvoj',
     'edu3-title': 'Mrežni administrator',
     'edu3-institution': 'Općinski ured za zapošljavanje',
-    'edu3-desc': 'Tajništvo za inovacije, proizvodnju i zapošljavanje.',
     'edu4-title': 'Inženjerstvo materijala',
-    'skills-title': 'Vještine i tehnologije',
-    'skills-languages': 'Programski jezici',
-    'skills-tools': 'Frameworci i alati',
-    'skills-specializations': 'Specijalizacije',
-    'spec-web': 'Web razvoj',
-    'spec-data': 'Analiza podataka',
-    'spec-scraping': 'Web scraping',
-    'spec-support': 'Tehnička podrška',
     'languages-title': 'Jezici',
     'lang-spanish': 'Španjolski',
     'lang-english': 'Engleski',
-    'level-native': 'Materinski',
-    'level-advanced': 'Napredno',
-    'projects-title': 'Moji projekti',
-    'about-website-title': 'O ovoj web stranici',
-    'about-website-description': 'Ručno izrađena stranica bez frameworka: semantički HTML, moderni CSS i čisti JavaScript, dostupna na tri jezika i hostana na GitHub Pages.',
-    'stat-languages': 'Jezici stranice',
-    'stat-frameworks': 'Frameworci',
-    'stat-projects': 'Istaknuti projekti',
-    'tech-stack-title': 'Korištene tehnologije i alati',
-    'see-more': 'Pogledaj na GitHubu',
-    'new-tab': 'otvara se u novoj kartici',
-    'aria-main-nav': 'Glavna navigacija',
+    'lang-croatian': 'Hrvatski',
+    'level-native': 'materinski',
+    'level-advanced': 'napredno',
+    'level-basic': 'osnovno',
+    'tools-title': 'Alati',
+    'contact-title': 'Razgovarajmo',
+    'contact-lead': 'E-pošta je najbrži način da me kontaktirate.',
+    'link-cv': 'Životopis (PDF)',
+    'link-motivation': 'Motivacijsko pismo (PDF)',
+    'link-certifications': 'Certifikati (PDF)',
+    'colophon': 'Ručno izrađeno u HTML-u, CSS-u i JavaScriptu, na tri jezika, bez frameworka.',
+    'new-tab-paren': ' (otvara se u novoj kartici)',
+    'alt-portrait': 'Portret Alana Salve',
+    'whatsapp-text': 'Pozdrav Alane, vidio/la sam tvoj portfolio i želio/la bih te kontaktirati.',
     'aria-home': 'Alan Salva — natrag na vrh',
-    'aria-language': 'Jezik: hrvatski',
-    'aria-open-menu': 'Otvori izbornik',
-    'aria-close-menu': 'Zatvori izbornik',
-    'aria-social': 'Kontakt i društvene mreže',
-    'aria-whatsapp': 'WhatsApp (otvara se u novoj kartici)',
-    'aria-email': 'E-pošta',
-    'aria-linkedin': 'LinkedIn (otvara se u novoj kartici)',
-    'aria-github': 'GitHub (otvara se u novoj kartici)'
+    'aria-main-nav': 'Glavna navigacija',
+    'aria-language': 'Jezik',
+    'aria-waypoints': 'Projekti na karti'
   }
 };
 
-const languageNames = {
-  en: { short: 'EN', native: 'English' },
-  es: { short: 'ES', native: 'Español' },
-  hr: { short: 'HR', native: 'Hrvatski' }
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+const t = (lang, key) => translations[lang]?.[key] ?? translations.en[key] ?? '';
+
+const storage = {
+  get(key) {
+    try { return localStorage.getItem(key); } catch (error) { return null; }
+  },
+  set(key, value) {
+    try { localStorage.setItem(key, value); } catch (error) { /* storage unavailable: language just isn't remembered */ }
+  }
 };
 
-// =================================
-// UTILITY FUNCTIONS
-// =================================
-class Utils {
-  static $(selector) {
-    return document.querySelector(selector);
-  }
-
-  static $$(selector) {
-    return document.querySelectorAll(selector);
-  }
-
-  static getStoredValue(key, defaultValue = null) {
-    try {
-      return localStorage.getItem(key) || defaultValue;
-    } catch (error) {
-      return defaultValue;
-    }
-  }
-
-  static setStoredValue(key, value) {
-    try {
-      localStorage.setItem(key, value);
-    } catch (error) {
-      // Storage unavailable (private mode, blocked cookies): language just isn't remembered.
-    }
-  }
-
-  static t(lang, key) {
-    return translations[lang]?.[key] ?? translations.en[key] ?? '';
-  }
-}
+const ARROW_SVG = '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
 
 // =================================
-// PROJECT MANAGER
+// PROJECTS
 // =================================
-class ProjectManager {
-  constructor() {
-    this.projectsGrid = Utils.$(SELECTORS.projectsGrid);
-    const count = Utils.$(SELECTORS.projectsCount);
-    if (count) count.textContent = projectsData.length;
-  }
+function renderProjects(lang) {
+  const list = $('#projects-list');
+  if (!list) return;
 
-  render(lang) {
-    if (!this.projectsGrid) return;
+  const fragment = document.createDocumentFragment();
 
-    const fragment = document.createDocumentFragment();
-    projectsData.forEach(project => fragment.appendChild(this.createProjectElement(project, lang)));
-    this.projectsGrid.replaceChildren(fragment);
-  }
+  projectsData.forEach((project, index) => {
+    const article = document.createElement('article');
+    article.className = 'project';
+    article.id = `project-${project.slug}`;
+    article.dataset.project = project.slug;
 
-  createProjectElement(project, lang) {
-    const card = document.createElement('article');
-    card.className = 'project-card';
+    const shot = document.createElement('figure');
+    shot.className = 'inset project__shot';
+    const img = document.createElement('img');
+    img.src = `assets/img/projects/${project.slug}/cover.png`;
+    img.alt = t(lang, 'project-shot-alt').replace('{title}', project.title);
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.width = 1600;
+    img.height = 1000;
+    const label = document.createElement('figcaption');
+    label.className = 'inset__label';
+    const fill = key => t(lang, key).replace('{n}', index + 1).replace('{title}', project.title);
+    label.textContent = fill('plan-label');
+    img.addEventListener('error', () => {
+      shot.classList.add('is-empty');
+      label.textContent = fill('plan-pending');
+      img.remove();
+    }, { once: true });
+    shot.append(img, label);
 
-    const content = document.createElement('div');
-    content.className = 'project-card__content';
+    const body = document.createElement('div');
+    body.className = 'project__body';
 
+    const head = document.createElement('div');
+    head.className = 'project__head';
+    const mark = document.createElement('span');
+    mark.className = 'project__mark';
+    mark.setAttribute('aria-hidden', 'true');
+    mark.textContent = String(index + 1);
     const title = document.createElement('h3');
-    title.className = 'project-card__title';
-    title.innerHTML = '<i class="fas fa-rocket" aria-hidden="true"></i> ';
-    title.append(project.title);
+    title.className = 'project__title';
+    title.textContent = project.title;
+    head.append(mark, title);
 
-    const description = document.createElement('p');
-    description.className = 'project-card__description';
-    description.textContent = project.description[lang] || project.description.en;
+    const desc = document.createElement('p');
+    desc.className = 'project__desc';
+    desc.textContent = project.description[lang] || project.description.en;
+
+    const stack = document.createElement('p');
+    stack.className = 'project__stack';
+    stack.textContent = project.technologies.join(' · ');
 
     const link = document.createElement('a');
-    link.className = 'project-card__link';
+    link.className = 'project__link';
     link.href = project.link;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.textContent = Utils.t(lang, 'see-more');
+    link.innerHTML = `<span></span>${ARROW_SVG}`;
+    link.firstChild.textContent = t(lang, 'project-code');
     const hidden = document.createElement('span');
     hidden.className = 'sr-only';
-    hidden.textContent = `: ${project.title} (${Utils.t(lang, 'new-tab')})`;
+    hidden.textContent = `: ${project.title}${t(lang, 'new-tab-paren')}`;
     link.appendChild(hidden);
 
-    content.append(title, description, link);
-    card.appendChild(content);
-    return card;
-  }
-}
-
-// =================================
-// LANGUAGE MANAGER
-// =================================
-class LanguageManager {
-  constructor(onChange) {
-    this.onChange = onChange;
-    this.currentLangBtn = Utils.$(SELECTORS.currentLangBtn);
-    this.langDropdown = Utils.$(SELECTORS.langDropdown);
-    this.languageSwitcher = Utils.$(SELECTORS.languageSwitcher);
-
-    const stored = Utils.getStoredValue(CONFIG.storageKey, CONFIG.defaultLanguage);
-    this.currentLanguage = CONFIG.supportedLanguages.includes(stored) ? stored : CONFIG.defaultLanguage;
-
-    this.setupEventListeners();
-    this.changeLanguage(this.currentLanguage);
-  }
-
-  setupEventListeners() {
-    if (this.currentLangBtn) {
-      this.currentLangBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        this.isOpen() ? this.closeDropdown() : this.openDropdown();
-      });
-
-      this.currentLangBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          this.openDropdown();
-          this.focusOption(0);
-        }
-      });
-    }
-
-    if (this.langDropdown) {
-      this.langDropdown.addEventListener('keydown', (e) => {
-        const options = this.getOptions();
-        const index = options.indexOf(document.activeElement);
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          this.focusOption((index + 1) % options.length);
-        } else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          this.focusOption((index - 1 + options.length) % options.length);
-        }
-      });
-    }
-
-    document.addEventListener('click', (e) => {
-      if (this.languageSwitcher && !this.languageSwitcher.contains(e.target)) {
-        this.closeDropdown();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isOpen()) {
-        this.closeDropdown();
-        this.currentLangBtn?.focus();
-      }
-    });
-  }
-
-  getOptions() {
-    return this.langDropdown ? [...this.langDropdown.querySelectorAll('.lang-option')] : [];
-  }
-
-  focusOption(index) {
-    this.getOptions()[index]?.focus();
-  }
-
-  renderDropdownOptions(selectedLang) {
-    if (!this.langDropdown) return;
-
-    const items = CONFIG.supportedLanguages
-      .filter(lang => lang !== selectedLang)
-      .map(lang => {
-        const li = document.createElement('li');
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'lang-option';
-        button.dataset.lang = lang;
-        button.lang = lang;
-        button.textContent = languageNames[lang].native;
-        button.addEventListener('click', (e) => {
-          e.stopPropagation();
-          this.changeLanguage(lang);
-          this.closeDropdown();
-          this.currentLangBtn?.focus();
-        });
-        li.appendChild(button);
-        return li;
-      });
-
-    this.langDropdown.replaceChildren(...items);
-  }
-
-  changeLanguage(lang) {
-    if (!translations[lang]) return;
-
-    this.currentLanguage = lang;
-    Utils.setStoredValue(CONFIG.storageKey, lang);
-    document.documentElement.lang = lang;
-
-    if (this.currentLangBtn) {
-      this.currentLangBtn.innerHTML =
-        `<span aria-hidden="true">${languageNames[lang].short}</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>`;
-    }
-    this.renderDropdownOptions(lang);
-
-    Utils.$$('[data-key]').forEach(element => {
-      const text = Utils.t(lang, element.dataset.key);
-      if (text) element.textContent = text;
-    });
-
-    Utils.$$('[data-aria-key]').forEach(element => {
-      const text = Utils.t(lang, element.dataset.ariaKey);
-      if (text) element.setAttribute('aria-label', text);
-    });
-
-    if (this.onChange) this.onChange(lang);
-  }
-
-  isOpen() {
-    return this.languageSwitcher?.classList.contains('active');
-  }
-
-  openDropdown() {
-    this.languageSwitcher?.classList.add('active');
-    this.currentLangBtn?.setAttribute('aria-expanded', 'true');
-  }
-
-  closeDropdown() {
-    this.languageSwitcher?.classList.remove('active');
-    this.currentLangBtn?.setAttribute('aria-expanded', 'false');
-  }
-}
-
-// =================================
-// NAVIGATION MANAGER
-// =================================
-class NavigationManager {
-  constructor() {
-    this.navbar = Utils.$(SELECTORS.navbar);
-    this.menuBtn = Utils.$(SELECTORS.mobileMenuBtn);
-    this.menu = Utils.$(SELECTORS.navbarMenu);
-    this.lang = CONFIG.defaultLanguage;
-
-    this.setupMobileMenu();
-    this.setupCurrentYear();
-  }
-
-  setLanguage(lang) {
-    this.lang = lang;
-    this.updateMenuLabel();
-  }
-
-  isOpen() {
-    return this.navbar?.classList.contains('is-open');
-  }
-
-  updateMenuLabel() {
-    if (!this.menuBtn) return;
-    const key = this.isOpen() ? 'aria-close-menu' : 'aria-open-menu';
-    this.menuBtn.dataset.ariaKey = key;
-    this.menuBtn.setAttribute('aria-label', Utils.t(this.lang, key));
-  }
-
-  setMenu(open) {
-    if (!this.navbar || !this.menuBtn) return;
-    this.navbar.classList.toggle('is-open', open);
-    this.menuBtn.setAttribute('aria-expanded', String(open));
-    this.updateMenuLabel();
-  }
-
-  setupMobileMenu() {
-    if (!this.menuBtn) return;
-
-    this.menuBtn.addEventListener('click', () => this.setMenu(!this.isOpen()));
-
-    Utils.$$('.nav-link').forEach(link => {
-      link.addEventListener('click', () => this.setMenu(false));
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isOpen()) {
-        this.setMenu(false);
-        this.menuBtn.focus();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (this.isOpen() && this.navbar && !this.navbar.contains(e.target)) {
-        this.setMenu(false);
-      }
-    });
-  }
-
-  setupCurrentYear() {
-    const yearElement = Utils.$('#current-year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  }
-}
-
-// =================================
-// APPLICATION STARTUP
-// =================================
-function bootstrap() {
-  const navigation = new NavigationManager();
-  const projects = new ProjectManager();
-
-  new LanguageManager((lang) => {
-    projects.render(lang);
-    navigation.setLanguage(lang);
+    body.append(head, desc, stack, link);
+    article.append(shot, body);
+    fragment.appendChild(article);
   });
+
+  list.replaceChildren(fragment);
+  linkWaypoints();
+}
+
+// Light the matching waypoint on the chart while a project is hovered or focused, and vice versa.
+function linkWaypoints() {
+  const setLit = (slug, on) => {
+    $$(`[data-project="${slug}"]`).forEach(el => {
+      const target = el.closest('.waypoint') || el.closest('.project') || el;
+      target.classList.toggle('is-lit', on);
+    });
+  };
+
+  $$('.project, .waypoint a').forEach(el => {
+    const slug = el.dataset.project;
+    if (!slug || el.dataset.bound) return;
+    el.dataset.bound = 'true';
+    el.addEventListener('pointerenter', () => setLit(slug, true));
+    el.addEventListener('pointerleave', () => setLit(slug, false));
+    el.addEventListener('focusin', () => setLit(slug, true));
+    el.addEventListener('focusout', () => setLit(slug, false));
+  });
+}
+
+// =================================
+// LANGUAGE
+// =================================
+function applyLanguage(lang) {
+  if (!translations[lang]) lang = CONFIG.defaultLanguage;
+
+  document.documentElement.lang = lang;
+  document.title = t(lang, 'page-title');
+  storage.set(CONFIG.storageKey, lang);
+
+  $$('[data-key]').forEach(el => {
+    const text = t(lang, el.dataset.key);
+    if (text) el.textContent = text;
+  });
+
+  $$('[data-aria-key]').forEach(el => {
+    const text = t(lang, el.dataset.ariaKey);
+    if (text) el.setAttribute('aria-label', text);
+  });
+
+  $$('[data-alt-key]').forEach(el => {
+    const text = t(lang, el.dataset.altKey);
+    if (text) el.setAttribute('alt', text);
+  });
+
+  $$('.lang__btn').forEach(btn => {
+    btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+  });
+
+  const whatsapp = $('#whatsapp-link');
+  if (whatsapp) {
+    whatsapp.href = `https://wa.me/385957926694?text=${encodeURIComponent(t(lang, 'whatsapp-text'))}`;
+  }
+
+  renderProjects(lang);
+}
+
+function bootstrap() {
+  const stored = storage.get(CONFIG.storageKey);
+  const initial = CONFIG.supportedLanguages.includes(stored) ? stored : CONFIG.defaultLanguage;
+
+  $$('.lang__btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+
+  linkWaypoints();
+  applyLanguage(initial);
+
+  const year = $('#current-year');
+  if (year) year.textContent = new Date().getFullYear();
 }
 
 if (document.readyState === 'loading') {

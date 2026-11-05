@@ -18,7 +18,7 @@ Tu portfolio ha sido exitosamente optimizado y desplegado en GitHub bajo el usua
 
 ### Archivos Incluidos
 - `index.html` - Página principal optimizada
-- `css/styles-optimized.css` - Estilos refactorizados
+- `css/styles.css` - Estilos refactorizados
 - `js/script.js` - JavaScript moderno
 - `favicon.svg` - Favicon SVG escalable
 - `README.md` - Documentación completa

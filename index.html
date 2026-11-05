@@ -1,495 +1,280 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <!-- Essential Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags -->
-  <title>Alan Salva | Python &amp; Web Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Alan Salva, a Python and web developer based in Croatia. Projects in web scraping, data processing and web development with Python, JavaScript, HTML and CSS.">
+  <title>Alan Salva | Technical Support &amp; Python Developer</title>
+  <meta name="description" content="Alan Salva: technical support at MMK Systems who also builds tools in Python and JavaScript. Based in Croatia. Projects, experience and contact.">
   <meta name="author" content="Alan Salva">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tyhrr.github.io/portfolio-optimized/">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tyhrr.github.io/portfolio-optimized/">
-  <meta property="og:title" content="Alan Salva | Python &amp; Web Developer">
-  <meta property="og:description" content="Python and web developer based in Croatia. Projects, experience and contact.">
+  <meta property="og:title" content="Alan Salva | Technical Support &amp; Python Developer">
+  <meta property="og:description" content="Technical support who also writes the fix. Projects, experience and contact.">
   <meta property="og:image" content="https://tyhrr.github.io/portfolio-optimized/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Portrait of Alan Salva">
-  <meta property="og:site_name" content="Alan Salva Portfolio">
+  <meta property="og:site_name" content="Alan Salva">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
   <meta property="og:locale:alternate" content="hr_HR">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alan Salva | Python &amp; Web Developer">
-  <meta name="twitter:description" content="Python and web developer based in Croatia. Projects, experience and contact.">
+  <meta name="twitter:title" content="Alan Salva | Technical Support &amp; Python Developer">
+  <meta name="twitter:description" content="Technical support who also writes the fix. Projects, experience and contact.">
   <meta name="twitter:image" content="https://tyhrr.github.io/portfolio-optimized/assets/img/og-image.jpg">
   <meta name="twitter:image:alt" content="Portrait of Alan Salva">
 
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alan Salva",
-    "jobTitle": "Python & Web Developer",
+    "jobTitle": "Customer Support Specialist",
+    "worksFor": { "@type": "Organization", "name": "MMK Systems" },
     "url": "https://tyhrr.github.io/portfolio-optimized/",
     "image": "https://tyhrr.github.io/portfolio-optimized/assets/img/og-image.jpg",
     "email": "mailto:alangabrielsalva@gmail.com",
     "address": { "@type": "PostalAddress", "addressCountry": "HR" },
-    "knowsLanguage": ["en", "es"],
-    "knowsAbout": ["Python", "JavaScript", "HTML", "CSS", "Web Scraping", "Data Analysis"],
-    "sameAs": [
-      "https://github.com/tyhrr",
-      "https://linkedin.com/in/alan-salva"
-    ]
+    "knowsLanguage": ["es", "en", "hr"],
+    "knowsAbout": ["Technical Support", "Python", "JavaScript", "Web Scraping", "Web Development"],
+    "sameAs": ["https://github.com/tyhrr", "https://linkedin.com/in/alan-salva"]
   }
   </script>
 
-  <!-- Favicon and Icons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
-  <!-- Fonts & icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-normal-300-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-normal-400-700-latin.woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/portrait.webp" type="image/webp">
+  <link rel="stylesheet" href="css/fonts.css">
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/styles-optimized.css">
-
-  <!-- Theme Color -->
-  <meta name="theme-color" content="#1a1a1a">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="theme-color" content="#E3EEF3">
 </head>
 <body>
-
   <a href="#main-content" class="skip-link" data-key="skip-link">Skip to main content</a>
 
-  <!-- Main Navigation -->
-  <header>
-    <nav class="navbar" id="navbar" aria-label="Main navigation" data-aria-key="aria-main-nav">
-      <div class="nav__content">
-        <div class="navbar__brand">
-          <a href="#main-content" class="brand-link" aria-label="Alan Salva — back to top" data-aria-key="aria-home">
-            <span class="brand-text" aria-hidden="true">AS</span>
-          </a>
-        </div>
+  <div class="chart">
+    <header class="topbar">
+      <a href="#main-content" class="topbar__name" aria-label="Alan Salva — back to top" data-aria-key="aria-home">Alan Salva</a>
 
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-          <button type="button" class="lang-btn-main" id="currentLang"
-                  aria-expanded="false" aria-controls="langDropdown"
-                  aria-label="Language: English" data-aria-key="aria-language">
-            <span aria-hidden="true">EN</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-          </button>
-          <ul class="lang-dropdown" id="langDropdown">
-            <li><button type="button" class="lang-option" data-lang="es" lang="es">Español</button></li>
-            <li><button type="button" class="lang-option" data-lang="hr" lang="hr">Hrvatski</button></li>
-          </ul>
-        </div>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn"
-                aria-expanded="false" aria-controls="navbar-menu"
-                aria-label="Open menu" data-aria-key="aria-open-menu">
-          <span class="hamburger-icon" aria-hidden="true">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </span>
-        </button>
-
-        <!-- Navigation Menu -->
-        <ul class="navbar__menu" id="navbar-menu">
-          <li>
-            <a href="#about-me" class="nav-link">
-              <span data-key="nav-about-me">About Me</span>
-              <i class="fa-solid fa-user nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#projects" class="nav-link">
-              <span data-key="nav-projects">Projects</span>
-              <i class="fa-solid fa-diagram-project nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#about-website" class="nav-link">
-              <span data-key="nav-about-website">About Website</span>
-              <i class="fa-solid fa-code nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="assets/documents/Motivation%20letter%20Alan%20Salva.pdf" download class="nav-link">
-              <span data-key="nav-motivation">Motivation Letter</span>
-              <i class="fa-solid fa-envelope-open-text nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="assets/documents/Certifications%20-%20Alan%20Salva.pdf" download class="nav-link">
-              <span data-key="nav-certifications">Certifications</span>
-              <i class="fa-solid fa-award nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:alangabrielsalva@gmail.com?subject=Open%20Positions" class="nav-link">
-              <span data-key="nav-contact">Contact</span>
-              <i class="fa-solid fa-comment nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main-content" tabindex="-1">
-    <!-- Hero Section -->
-    <section class="hero-section" aria-labelledby="hero-title">
-      <div class="hero__container">
-        <div class="hero__content">
-          <h1 id="hero-title" class="hero__title">
-            <span data-key="hero-intro">I'm</span>
-            <span class="hero__name">Alan</span><br>
-            <span data-key="hero-role">a Python &amp; Web Developer</span>
-          </h1>
-          <p class="hero__description" data-key="hero-description">
-            Welcome to my portfolio! I'm Alan, a Python and web developer based in Croatia and a data analysis student.
-            I've worked on web projects ranging from personal blogs to e-commerce platforms, and I'm looking for an
-            opportunity to keep growing in software development and artificial intelligence.
-          </p>
-
-          <!-- Call to Action -->
-          <div class="hero__actions">
-            <a href="assets/documents/ALAN%20SALVACV-EN-IT.pdf" download class="btn btn--primary">
-              <span data-key="hero-resume">Download CV</span>
-              <i class="fa-solid fa-download btn__icon" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Developer Terminal (decorative summary of the hero text) -->
-        <div class="hero__terminal" aria-hidden="true">
-          <div class="terminal">
-            <div class="terminal__header">
-              <div class="terminal__controls">
-                <span class="terminal__control terminal__control--close"></span>
-                <span class="terminal__control terminal__control--minimize"></span>
-                <span class="terminal__control terminal__control--maximize"></span>
-              </div>
-              <div class="terminal__title">alan@developer:~$</div>
-            </div>
-            <div class="terminal__body">
-              <div class="terminal__line">
-                <span class="terminal__prompt">alan@developer:~$</span>
-                <span class="terminal__command">cat about.json</span>
-              </div>
-              <div class="terminal__output">
-                <div class="terminal__json">
-                  <span class="json__bracket">{</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"name"</span><span class="json__colon">:</span> <span class="json__string">"Alan Salva"</span><span class="json__comma">,</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"role"</span><span class="json__colon">:</span> <span class="json__string">"Python &amp; Web Developer"</span><span class="json__comma">,</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"status"</span><span class="json__colon">:</span> <span class="json__string">"Data Analysis Student"</span><span class="json__comma">,</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"location"</span><span class="json__colon">:</span> <span class="json__string">"Croatia"</span><span class="json__comma">,</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"languages"</span><span class="json__colon">:</span> <span class="json__bracket">[</span><span class="json__string">"Spanish"</span><span class="json__comma">,</span> <span class="json__string">"English"</span><span class="json__bracket">]</span><span class="json__comma">,</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"skills"</span><span class="json__colon">:</span> <span class="json__bracket">[</span><br>
-                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Python"</span><span class="json__comma">,</span><br>
-                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"JavaScript"</span><span class="json__comma">,</span><br>
-                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"HTML/CSS"</span><span class="json__comma">,</span><br>
-                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Data Analysis"</span><span class="json__comma">,</span><br>
-                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Web Scraping"</span><br>
-                  <span class="json__bracket">&nbsp;&nbsp;]</span><span class="json__comma">,</span><br>
-                  <span class="json__key">&nbsp;&nbsp;"passion"</span><span class="json__colon">:</span> <span class="json__string">"Building useful solutions"</span><br>
-                  <span class="json__bracket">}</span>
-                </div>
-              </div>
-              <div class="terminal__line">
-                <span class="terminal__prompt">alan@developer:~$</span>
-                <span class="terminal__cursor">█</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about-me" class="about-me-section" aria-labelledby="about-me-title">
-      <div class="about-me__container">
-        <h2 id="about-me-title" class="about-me__title" data-key="about-me-title">About Me</h2>
-
-        <div class="about-me__content">
-          <!-- Personal Info -->
-          <div class="about-me__intro">
-            <p class="about-me__description" data-key="about-me-description">
-              I'm a web developer who enjoys turning ideas into functional, easy-to-use digital products. I've built
-              dynamic websites, e-commerce platforms and data-driven tools with JavaScript and Python, and I'm currently
-              deepening my Python skills and exploring how to integrate AI into web projects.
-            </p>
-          </div>
-
-          <!-- Work Experience -->
-          <div class="about-me__section">
-            <h3 class="about-me__section-title">
-              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-              <span data-key="work-experience-title">Work Experience</span>
-            </h3>
-
-            <div class="experience-timeline">
-              <div class="experience-item">
-                <div class="experience-period" data-key="exp-mmk-period">Jan 2026 – Present</div>
-                <div class="experience-content">
-                  <h4 class="experience-title" data-key="exp-mmk-title">Customer Support Specialist</h4>
-                  <p class="experience-company">MMK Systems</p>
-                  <p class="experience-description" data-key="exp-mmk-desc">
-                    Technical and customer support for Booking Manager, MMK Systems' yacht charter management software.
-                    Resolving client cases, configuring prices and contract templates, and reporting bugs to the
-                    development team through Jira.
-                  </p>
-                </div>
-              </div>
-
-              <div class="experience-item">
-                <div class="experience-period">2024</div>
-                <div class="experience-content">
-                  <h4 class="experience-title" data-key="exp1-title">Web Developer &amp; Designer</h4>
-                  <p class="experience-company">Udruga Vestigium</p>
-                  <p class="experience-description" data-key="exp1-desc">
-                    Designing and developing the website of Udruga Vestigium, a non-profit organization. The site gives
-                    the community access to resources and support, with a focus on usability and accessibility.
-                  </p>
-                </div>
-              </div>
-
-              <div class="experience-item">
-                <div class="experience-period">2023</div>
-                <div class="experience-content">
-                  <h4 class="experience-title" data-key="exp2-title">Web Developer &amp; Designer</h4>
-                  <p class="experience-company" data-key="exp2-company">Freelance / personal projects</p>
-                  <p class="experience-description" data-key="exp2-desc">
-                    Designed and built websites and developed Python tools, including Selenium-based scrapers that
-                    extract information from external web applications.
-                  </p>
-                </div>
-              </div>
-
-              <div class="experience-item">
-                <div class="experience-period">2020</div>
-                <div class="experience-content">
-                  <h4 class="experience-title" data-key="exp3-title">Support Specialist / Technical Assistant</h4>
-                  <p class="experience-company">Claro Argentina</p>
-                  <p class="experience-description" data-key="exp3-desc">
-                    Managed tasks, assisted customers, provided technical support and ensured smooth product
-                    implementation. Strong communication and troubleshooting skills.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="about-me__section">
-            <h3 class="about-me__section-title">
-              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-              <span data-key="education-title">Education</span>
-            </h3>
-
-            <div class="education-grid">
-              <div class="education-item">
-                <div class="education-period">2023 – 2024</div>
-                <h4 class="education-title" data-key="edu1-title">Development with Python</h4>
-                <p class="education-institution">Humai Institute – Argentina</p>
-              </div>
-
-              <div class="education-item">
-                <div class="education-period">2022 – 2023</div>
-                <h4 class="education-title" data-key="edu2-title">Full-stack Development</h4>
-                <p class="education-institution">Axe School – Argentina</p>
-              </div>
-
-              <div class="education-item">
-                <div class="education-period">2021 – 2022</div>
-                <h4 class="education-title" data-key="edu3-title">Network Administrator</h4>
-                <p class="education-institution" data-key="edu3-institution">Municipal Labor Office</p>
-                <p class="education-description" data-key="edu3-desc">
-                  Secretariat of Innovation, Production and Employment.
-                </p>
-              </div>
-
-              <div class="education-item">
-                <div class="education-period">2012 – 2018</div>
-                <h4 class="education-title" data-key="edu4-title">Materials Engineering</h4>
-                <p class="education-institution">UNP Buenos Aires, La Plata</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Skills & Technologies -->
-          <div class="about-me__section">
-            <h3 class="about-me__section-title">
-              <i class="fa-solid fa-code" aria-hidden="true"></i>
-              <span data-key="skills-title">Skills &amp; Technologies</span>
-            </h3>
-
-            <div class="skills-grid">
-              <div class="skill-category">
-                <h4 class="skill-category-title" data-key="skills-languages">Programming Languages</h4>
-                <ul class="skill-tags">
-                  <li class="skill-tag">Python</li>
-                  <li class="skill-tag">JavaScript</li>
-                  <li class="skill-tag">HTML5</li>
-                  <li class="skill-tag">CSS3</li>
-                </ul>
-              </div>
-
-              <div class="skill-category">
-                <h4 class="skill-category-title" data-key="skills-tools">Frameworks &amp; Tools</h4>
-                <ul class="skill-tags">
-                  <li class="skill-tag">Docker</li>
-                  <li class="skill-tag">Node.js</li>
-                  <li class="skill-tag">Git</li>
-                  <li class="skill-tag">GitHub</li>
-                </ul>
-              </div>
-
-              <div class="skill-category">
-                <h4 class="skill-category-title" data-key="skills-specializations">Specializations</h4>
-                <ul class="skill-tags">
-                  <li class="skill-tag" data-key="spec-web">Web Development</li>
-                  <li class="skill-tag" data-key="spec-data">Data Analysis</li>
-                  <li class="skill-tag" data-key="spec-scraping">Web Scraping</li>
-                  <li class="skill-tag" data-key="spec-support">Technical Support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Languages -->
-          <div class="about-me__section">
-            <h3 class="about-me__section-title">
-              <i class="fa-solid fa-globe" aria-hidden="true"></i>
-              <span data-key="languages-title">Languages</span>
-            </h3>
-
-            <div class="languages-grid">
-              <div class="language-item">
-                <span class="language-name" data-key="lang-spanish">Spanish</span>
-                <div class="language-level">
-                  <span class="level-indicator level-fluent" aria-hidden="true"></span>
-                  <span class="level-text" data-key="level-native">Native</span>
-                </div>
-              </div>
-
-              <div class="language-item">
-                <span class="language-name" data-key="lang-english">English</span>
-                <div class="language-level">
-                  <span class="level-indicator level-advanced" aria-hidden="true"></span>
-                  <span class="level-text" data-key="level-advanced">Advanced</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section" aria-labelledby="projects-title">
-      <div class="projects__container">
-        <h2 id="projects-title" class="projects__title" data-key="projects-title">My Projects</h2>
-
-        <!-- Projects are rendered by js/script.js in the current language -->
-        <div id="projects-grid" class="projects__grid"></div>
-        <noscript>
-          <p>See all projects on <a href="https://github.com/tyhrr">GitHub</a>.</p>
-        </noscript>
-      </div>
-    </section>
-
-    <!-- About Website Section -->
-    <section id="about-website" class="about-website-section" aria-labelledby="about-website-title">
-      <div class="about-website__container">
-        <h2 id="about-website-title" class="about-website__title" data-key="about-website-title">About This Website</h2>
-        <p class="about-website__description" data-key="about-website-description">
-          A hand-coded, framework-free site: semantic HTML, modern CSS and vanilla JavaScript, available in three languages and hosted on GitHub Pages.
-        </p>
-
-        <!-- Project Stats -->
-        <dl class="project-stats">
-          <div class="project-stats__item">
-            <dt class="project-stats__label" data-key="stat-languages">Site languages</dt>
-            <dd class="project-stats__number">3</dd>
-          </div>
-          <div class="project-stats__item">
-            <dt class="project-stats__label" data-key="stat-frameworks">Frameworks</dt>
-            <dd class="project-stats__number">0</dd>
-          </div>
-          <div class="project-stats__item">
-            <dt class="project-stats__label" data-key="stat-projects">Featured projects</dt>
-            <dd class="project-stats__number" id="stat-projects-count">4</dd>
-          </div>
-        </dl>
-
-        <!-- Technologies Used -->
-        <div class="tech-stack">
-          <h3 class="tech-stack__title" data-key="tech-stack-title">Technologies &amp; Tools Used</h3>
-          <ul class="tech-stack__grid">
-            <li class="tech-item"><i class="fab fa-html5" aria-hidden="true"></i><span>HTML5</span></li>
-            <li class="tech-item"><i class="fab fa-css3-alt" aria-hidden="true"></i><span>CSS3</span></li>
-            <li class="tech-item"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript ES6+</span></li>
-            <li class="tech-item"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></li>
-            <li class="tech-item"><i class="fa-solid fa-server" aria-hidden="true"></i><span>GitHub Pages</span></li>
-            <li class="tech-item"><i class="fa-solid fa-language" aria-hidden="true"></i><span>EN · ES · HR</span></li>
-            <li class="tech-item"><i class="fa-solid fa-universal-access" aria-hidden="true"></i><span>WCAG 2.1</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__content">
-      <!-- Social Links -->
-      <nav class="social-nav" aria-label="Contact and social links" data-aria-key="aria-social">
-        <a href="https://wa.me/385957926694?text=Hola%20Alan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte."
-           class="social-link" target="_blank" rel="noopener noreferrer"
-           aria-label="WhatsApp (opens in a new tab)" data-aria-key="aria-whatsapp">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:alangabrielsalva@gmail.com?subject=Contact%20from%20Portfolio"
-           class="social-link" aria-label="Email" data-aria-key="aria-email">
-          <i class="far fa-envelope" aria-hidden="true"></i>
-        </a>
-        <a href="https://linkedin.com/in/alan-salva"
-           class="social-link" target="_blank" rel="noopener noreferrer"
-           aria-label="LinkedIn (opens in a new tab)" data-aria-key="aria-linkedin">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/tyhrr"
-           class="social-link" target="_blank" rel="noopener noreferrer"
-           aria-label="GitHub (opens in a new tab)" data-aria-key="aria-github">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
+      <nav class="topbar__nav" aria-label="Main navigation" data-aria-key="aria-main-nav">
+        <a href="#projects" data-key="nav-projects">Projects</a>
+        <a href="#experience" data-key="nav-experience">Experience</a>
+        <a href="#contact" data-key="nav-contact">Contact</a>
+        <a href="assets/documents/ALAN%20SALVACV-EN-IT.pdf" class="topbar__cv" target="_blank" rel="noopener" data-key="nav-cv">CV (PDF)</a>
       </nav>
-    </div>
 
-    <!-- Copyright -->
-    <div class="footer__bottom">
-      <p class="footer__copyright">
-        &copy; <span id="current-year">2026</span> Alan Salva
-      </p>
-    </div>
-  </footer>
+      <div class="lang" role="group" aria-label="Language" data-aria-key="aria-language">
+        <button type="button" class="lang__btn" data-lang="en" lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang__btn" data-lang="es" lang="es" aria-pressed="false">ES</button>
+        <button type="button" class="lang__btn" data-lang="hr" lang="hr" aria-pressed="false">HR</button>
+      </div>
+    </header>
 
-  <!-- Scripts -->
+    <main id="main-content" tabindex="-1">
+
+      <!-- Opening: the chart -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner">
+          <div class="cartouche">
+            <h1 id="hero-title" class="cartouche__name">Alan Salva</h1>
+            <p class="cartouche__role" data-key="hero-role">Technical support who also writes the fix.</p>
+            <p class="cartouche__intro" data-key="hero-intro">I support customers of Booking Manager, MMK Systems' yacht charter software, and I build tools in Python and JavaScript: scrapers, a CV parser, web apps. I studied materials engineering in Argentina and now work from Croatia in Spanish, English and some Croatian.</p>
+            <div class="cartouche__actions">
+              <a class="btn btn--primary" href="mailto:alangabrielsalva@gmail.com?subject=Hello%20Alan" data-key="hero-cta">Write to me</a>
+              <a class="btn btn--plain" href="assets/documents/ALAN%20SALVACV-EN-IT.pdf" target="_blank" rel="noopener" data-key="hero-cv">Read my CV (PDF)</a>
+            </div>
+          </div>
+
+          <figure class="inset inset--portrait">
+            <img src="assets/img/portrait.webp" width="720" height="960" alt="Portrait of Alan Salva" data-alt-key="alt-portrait" fetchpriority="high">
+            <figcaption class="inset__label" data-key="chart-inset">Plan A · Croatia</figcaption>
+          </figure>
+
+          <!-- The chart field: wide on desktop (behind everything), its own portrait band on phones -->
+          <div class="hero__chart">
+            <svg class="sea sea--wide" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <path class="shoal" d="M0 660 C110 640 210 680 290 735 C350 778 395 840 425 900 L0 900 Z"/>
+              <path class="shoal" d="M840 0 C860 70 900 140 950 200 C1000 262 1080 330 1170 392 C1260 452 1350 500 1440 520 L1440 0 Z"/>
+              <path class="contour" d="M0 600 C150 590 270 640 360 715 C430 772 480 840 505 900"/>
+              <path class="contour" d="M800 0 C815 90 860 170 915 236 C975 306 1070 380 1170 444 C1260 500 1350 545 1440 565"/>
+              <path class="land" d="M0 742 C34 736 62 748 90 740 C118 732 140 750 166 760 C188 768 204 764 226 780 C248 796 258 812 282 826 C302 838 312 856 330 870 C342 880 350 892 356 900 L0 900 Z"/>
+              <path class="land" d="M900 0 C912 22 928 30 934 52 C940 74 958 82 966 104 C974 126 990 132 1000 156 C1008 176 1004 192 1014 214 C1020 228 1018 236 1024 244 C1036 262 1058 270 1074 290 C1090 310 1110 312 1130 334 C1150 356 1172 360 1196 380 C1222 402 1250 404 1276 424 C1302 444 1334 448 1362 470 C1390 492 1414 500 1440 512 L1440 0 Z"/>
+              <path class="land" d="M866 160 L878 158 L884 166 L896 168 L902 178 L914 182 L920 192 L932 198 L940 210 L946 222 L938 226 L928 218 L918 216 L910 206 L898 202 L890 192 L878 186 L870 176 L862 170 Z"/>
+              <path class="land" d="M836 268 L848 270 L852 278 L864 282 L870 292 L882 298 L888 308 L900 314 L904 324 L896 328 L884 320 L874 318 L866 308 L854 302 L846 292 L836 286 L830 276 Z"/>
+              <g class="soundings">
+                <text x="430" y="726">7</text><text x="520" y="856">12</text><text x="716" y="836">19</text>
+                <text x="880" y="860">24</text><text x="830" y="610">31</text><text x="930" y="736">38</text>
+                <text x="980" y="610">33</text><text x="1110" y="736">41</text><text x="1190" y="850">46</text>
+                <text x="1350" y="660">37</text><text x="790" y="250">22</text><text x="380" y="866">5</text>
+              </g>
+              <text class="water-name" x="96" y="716" data-key="chart-west">Río de la Plata</text>
+              <text class="water-name" x="1060" y="690" data-key="chart-east">Adriatic Sea</text>
+              <text class="land-name" x="40" y="852">ARGENTINA</text>
+              <text class="land-name" x="1130" y="74" data-key="chart-land-east">CROATIA</text>
+              <g class="rose" transform="translate(1330 810)">
+                <circle r="44"/><circle r="36"/>
+                <path class="rose__point" d="M0 -58 L7 -7 L0 0 Z"/><path class="rose__point rose__point--dark" d="M0 -58 L-7 -7 L0 0 Z"/>
+                <path class="rose__point" d="M0 30 L-7 7 L0 0 Z"/><path class="rose__point rose__point--dark" d="M0 30 L7 7 L0 0 Z"/>
+                <path class="rose__point" d="M30 0 L7 7 L0 0 Z"/><path class="rose__point rose__point--dark" d="M30 0 L7 -7 L0 0 Z"/>
+                <path class="rose__point" d="M-30 0 L-7 -7 L0 0 Z"/><path class="rose__point rose__point--dark" d="M-30 0 L-7 7 L0 0 Z"/>
+                <text class="rose__n" x="0" y="-64">N</text>
+              </g>
+            </svg>
+
+            <svg class="sea sea--tall" viewBox="0 0 375 540" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <path class="shoal" d="M0 410 C70 418 120 450 150 500 C160 516 166 530 168 540 L0 540 Z"/>
+              <path class="shoal" d="M190 0 C200 40 228 76 262 104 C298 134 338 150 375 156 L375 0 Z"/>
+              <path class="contour" d="M0 370 C90 380 160 430 196 500 C204 516 208 530 210 540"/>
+              <path class="contour" d="M160 0 C170 56 206 104 252 138 C292 168 334 184 375 190"/>
+              <path class="land" d="M0 470 C20 466 36 476 54 472 C72 468 86 482 100 494 C112 504 122 512 130 526 C134 532 136 536 138 540 L0 540 Z"/>
+              <path class="land" d="M226 0 C232 12 240 18 246 32 C252 46 262 50 270 64 C278 76 292 80 304 90 C318 100 334 104 348 112 C358 118 366 120 375 122 L375 0 Z"/>
+              <path class="land" d="M214 72 L222 74 L226 82 L234 86 L240 94 L248 98 L256 106 L260 114 L254 116 L246 110 L238 108 L232 100 L224 96 L218 88 L212 82 Z"/>
+              <path class="land" d="M256 138 L264 140 L268 148 L276 152 L282 160 L292 166 L296 174 L290 176 L282 170 L274 168 L268 160 L262 156 L256 148 Z"/>
+              <g class="soundings">
+                <text x="180" y="456">9</text><text x="300" y="420">27</text><text x="250" y="300">31</text>
+                <text x="70" y="250">18</text><text x="64" y="206">26</text><text x="320" y="250">35</text>
+              </g>
+              <text class="water-name" x="168" y="528" data-key="chart-west">Río de la Plata</text>
+              <text class="water-name" x="20" y="130" data-key="chart-east">Adriatic Sea</text>
+              <text class="land-name" x="14" y="530">ARGENTINA</text>
+              <text class="land-name" x="262" y="40" data-key="chart-land-east">CROATIA</text>
+            </svg>
+
+            <svg class="course course--wide" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <polyline points="1,92 18,90 54,88 58,56 68,18"/>
+            </svg>
+            <svg class="course course--tall" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <polyline points="4,90 24,80 64,64 30,48 56,6"/>
+            </svg>
+
+            <ol class="waypoints" aria-label="Projects on the chart" data-aria-key="aria-waypoints">
+              <li class="waypoint waypoint--1"><a href="#project-workwavecoast" data-project="workwavecoast"><span class="waypoint__mark" aria-hidden="true">1</span><span class="waypoint__name">WorkWaveCoast</span></a></li>
+              <li class="waypoint waypoint--2"><a href="#project-cv-processor" data-project="cv-processor"><span class="waypoint__mark" aria-hidden="true">2</span><span class="waypoint__name">CV Processor</span></a></li>
+              <li class="waypoint waypoint--3"><a href="#project-tugurium-scraper" data-project="tugurium-scraper"><span class="waypoint__mark" aria-hidden="true">3</span><span class="waypoint__name">Tugurium scraper</span></a></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <h2 id="projects-title" data-key="projects-title">Projects</h2>
+          <p data-key="projects-intro">Three things I built along the way.</p>
+        </div>
+        <div id="projects-list" class="projects__list"></div>
+        <noscript><p class="noscript">See all projects on <a href="https://github.com/tyhrr">GitHub</a>.</p></noscript>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="log" aria-labelledby="experience-title">
+        <div class="section-head">
+          <h2 id="experience-title" data-key="experience-title">Experience</h2>
+        </div>
+
+        <ol class="log__entries">
+          <li class="log__entry">
+            <p class="log__when" data-key="exp-mmk-period">Jan 2026 – present</p>
+            <div class="log__what">
+              <h3><span data-key="exp-mmk-title">Customer Support Specialist</span> <span class="log__at">· MMK Systems</span></h3>
+              <p data-key="exp-mmk-desc">Technical and customer support for Booking Manager, MMK Systems' yacht charter management software. Resolving client cases, configuring prices and contract templates, and reporting bugs to the development team through Jira.</p>
+            </div>
+          </li>
+          <li class="log__entry">
+            <p class="log__when">2024</p>
+            <div class="log__what">
+              <h3><span data-key="exp1-title">Web Developer &amp; Designer</span> <span class="log__at">· Udruga Vestigium</span></h3>
+              <p data-key="exp1-desc">Designing and developing the website of Udruga Vestigium, a non-profit organization. The site gives the community access to resources and support, with a focus on usability and accessibility.</p>
+            </div>
+          </li>
+          <li class="log__entry">
+            <p class="log__when">2023</p>
+            <div class="log__what">
+              <h3><span data-key="exp2-title">Web Developer &amp; Designer</span> <span class="log__at">· <span data-key="exp2-company">Freelance / personal projects</span></span></h3>
+              <p data-key="exp2-desc">Designed and built websites and developed Python tools, including Selenium-based scrapers that extract information from external web applications.</p>
+            </div>
+          </li>
+          <li class="log__entry">
+            <p class="log__when">2020</p>
+            <div class="log__what">
+              <h3><span data-key="exp3-title">Support Specialist / Technical Assistant</span> <span class="log__at">· Claro Argentina</span></h3>
+              <p data-key="exp3-desc">Managed tasks, assisted customers, provided technical support and ensured smooth product implementation. Strong communication and troubleshooting skills.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="log__aside">
+          <div class="log__block">
+            <h3 data-key="education-title">Training</h3>
+            <ul class="plain-list">
+              <li><span class="plain-list__when">2023–24</span> <span data-key="edu1-title">Development with Python</span>, Humai Institute</li>
+              <li><span class="plain-list__when">2022–23</span> <span data-key="edu2-title">Full-stack Development</span>, Axe School</li>
+              <li><span class="plain-list__when">2021–22</span> <span data-key="edu3-title">Network Administrator</span>, <span data-key="edu3-institution">Municipal Labor Office</span></li>
+              <li><span class="plain-list__when">2012–18</span> <span data-key="edu4-title">Materials Engineering</span>, UNP La Plata</li>
+            </ul>
+          </div>
+          <div class="log__block">
+            <h3 data-key="languages-title">Languages</h3>
+            <ul class="plain-list">
+              <li><span data-key="lang-spanish">Spanish</span> <span class="plain-list__note" data-key="level-native">native</span></li>
+              <li><span data-key="lang-english">English</span> <span class="plain-list__note" data-key="level-advanced">advanced</span></li>
+              <li><span data-key="lang-croatian">Croatian</span> <span class="plain-list__note" data-key="level-basic">basic</span></li>
+            </ul>
+          </div>
+          <div class="log__block">
+            <h3 data-key="tools-title">Tools</h3>
+            <p class="tools">Python · Requests · BeautifulSoup · Pandas · Selenium · JavaScript · HTML · CSS · Node.js · MongoDB · Docker · Git · Jira</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact: landfall -->
+      <section id="contact" class="landfall" aria-labelledby="contact-title">
+        <svg class="landfall__coast landfall__coast--wide" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="landfall__contour" d="M0 62 C60 60 110 44 150 28 C180 14 210 4 250 4 C290 4 300 40 340 56 C390 74 430 64 470 70 C510 76 560 92 620 90 C680 88 700 64 760 62 C800 60 830 32 860 30 C890 28 900 56 940 58 C990 60 1030 40 1070 18 C1100 6 1150 12 1200 26 C1240 38 1270 54 1320 58 C1370 62 1410 58 1440 60"/>
+          <path class="landfall__land" d="M0 120 L0 78 C24 76 40 82 62 80 C86 78 98 70 118 66 C140 62 150 52 168 44 C182 38 188 26 204 22 C218 18 230 24 238 18 C248 12 262 16 268 26 C274 36 266 44 276 52 C288 62 304 60 318 70 C332 80 352 78 372 80 C398 82 418 76 440 80 C462 84 476 96 494 102 C510 108 526 104 540 110 C560 116 590 114 612 112 C636 110 652 104 668 96 C684 88 690 80 708 78 C726 76 742 82 762 78 C782 74 796 66 812 62 C830 58 838 48 852 46 C866 44 872 54 878 62 C886 72 904 74 924 76 C948 78 968 72 990 70 C1012 68 1030 62 1048 52 C1064 44 1072 34 1090 30 C1108 26 1120 34 1134 32 C1146 30 1150 42 1162 46 C1174 50 1186 40 1198 42 C1214 44 1222 56 1236 62 C1252 68 1270 70 1290 74 C1316 78 1340 74 1366 76 C1394 78 1416 74 1440 76 L1440 120 Z"/>
+          <path class="landfall__land landfall__islet" d="M572 70 C578 64 590 64 596 70 C600 76 592 82 584 80 C576 80 568 76 572 70 Z"/>
+          <path class="landfall__land landfall__islet" d="M1268 36 C1274 31 1284 32 1288 38 C1291 43 1284 46 1277 45 C1270 44 1264 41 1268 36 Z"/>
+          <path class="landfall__shore" d="M0 78 C24 76 40 82 62 80 C86 78 98 70 118 66 C140 62 150 52 168 44 C182 38 188 26 204 22 C218 18 230 24 238 18 C248 12 262 16 268 26 C274 36 266 44 276 52 C288 62 304 60 318 70 C332 80 352 78 372 80 C398 82 418 76 440 80 C462 84 476 96 494 102 C510 108 526 104 540 110 C560 116 590 114 612 112 C636 110 652 104 668 96 C684 88 690 80 708 78 C726 76 742 82 762 78 C782 74 796 66 812 62 C830 58 838 48 852 46 C866 44 872 54 878 62 C886 72 904 74 924 76 C948 78 968 72 990 70 C1012 68 1030 62 1048 52 C1064 44 1072 34 1090 30 C1108 26 1120 34 1134 32 C1146 30 1150 42 1162 46 C1174 50 1186 40 1198 42 C1214 44 1222 56 1236 62 C1252 68 1270 70 1290 74 C1316 78 1340 74 1366 76 C1394 78 1416 74 1440 76"/>
+        </svg>
+        <svg class="landfall__coast landfall__coast--tall" viewBox="0 0 375 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path class="landfall__contour" d="M0 46 C30 44 60 28 90 14 C110 4 140 2 160 18 C180 34 200 40 230 56 C256 68 280 52 300 38 C320 24 340 20 360 34 C366 38 370 40 375 40"/>
+          <path class="landfall__land" d="M0 90 L0 60 C20 58 32 64 50 60 C70 56 80 40 96 30 C108 22 118 14 130 18 C142 22 138 34 148 42 C160 52 176 50 190 58 C206 66 214 78 232 82 C248 86 262 82 274 74 C286 66 290 56 304 52 C318 48 324 36 338 34 C352 32 356 44 362 50 C368 56 372 56 375 56 L375 90 Z"/>
+          <path class="landfall__land landfall__islet" d="M236 50 C241 45 250 46 253 52 C255 57 248 60 242 58 C236 57 232 54 236 50 Z"/>
+          <path class="landfall__shore" d="M0 60 C20 58 32 64 50 60 C70 56 80 40 96 30 C108 22 118 14 130 18 C142 22 138 34 148 42 C160 52 176 50 190 58 C206 66 214 78 232 82 C248 86 262 82 274 74 C286 66 290 56 304 52 C318 48 324 36 338 34 C352 32 356 44 362 50 C368 56 372 56 375 56"/>
+        </svg>
+        <div class="landfall__inner">
+          <h2 id="contact-title" data-key="contact-title">Let's talk</h2>
+          <p class="landfall__lead" data-key="contact-lead">Email is the quickest way to reach me.</p>
+          <a class="landfall__email" href="mailto:alangabrielsalva@gmail.com?subject=Hello%20Alan">alangabrielsalva@gmail.com</a>
+
+          <ul class="landfall__links">
+            <li><a href="https://linkedin.com/in/alan-salva" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only" data-key="new-tab-paren"> (opens in a new tab)</span></a></li>
+            <li><a href="https://github.com/tyhrr" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only" data-key="new-tab-paren"> (opens in a new tab)</span></a></li>
+            <li><a id="whatsapp-link" href="https://wa.me/385957926694" target="_blank" rel="noopener noreferrer">WhatsApp<span class="sr-only" data-key="new-tab-paren"> (opens in a new tab)</span></a></li>
+            <li><a href="assets/documents/ALAN%20SALVACV-EN-IT.pdf" target="_blank" rel="noopener" data-key="link-cv">CV (PDF)</a></li>
+            <li><a href="assets/documents/Motivation%20letter%20Alan%20Salva.pdf" target="_blank" rel="noopener" data-key="link-motivation">Motivation letter (PDF)</a></li>
+            <li><a href="assets/documents/Certifications%20-%20Alan%20Salva.pdf" target="_blank" rel="noopener" data-key="link-certifications">Certifications (PDF)</a></li>
+          </ul>
+
+          <footer class="colophon">
+            <p data-key="colophon">Hand-coded in HTML, CSS and JavaScript, in three languages, no frameworks.</p>
+            <p>&copy; <span id="current-year">2026</span> Alan Salva</p>
+          </footer>
+        </div>
+      </section>
+    </main>
+  </div>
+
   <script src="js/script.js" defer></script>
 </body>
 </html>
