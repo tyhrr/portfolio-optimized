@@ -3,762 +3,480 @@
 <head>
   <!-- Essential Meta Tags -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- SEO Meta Tags -->
-  <title>Alan Salva | Python Developer & Data Analyst Portfolio</title>
-  <meta name="description" content="Professional portfolio of Alan Salva - Python Developer and Data Analysis Student. Showcasing web development projects, skills in Python, JavaScript, HTML/CSS, and data analysis.">
-  <meta name="keywords" content="Python developer, web development, data analysis, portfolio, Alan Salva, programming, full-stack developer, JavaScript, HTML, CSS, React, GitHub">
+  <title>Alan Salva | Python &amp; Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Alan Salva, a Python and web developer based in Croatia. Projects in web scraping, data processing and web development with Python, JavaScript, HTML and CSS.">
   <meta name="author" content="Alan Salva">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://alansalva.online">
-  
-  <!-- Open Graph / Facebook -->
+  <link rel="canonical" href="https://tyhrr.github.io/portfolio-optimized/">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alansalva.online">
-  <meta property="og:title" content="Alan Salva | Python Developer Portfolio">
-  <meta property="og:description" content="Professional portfolio showcasing web development projects and Python programming skills">
-  <meta property="og:image" content="https://alansalva.online/assets/img/fotoperfil.png">
+  <meta property="og:url" content="https://tyhrr.github.io/portfolio-optimized/">
+  <meta property="og:title" content="Alan Salva | Python &amp; Web Developer">
+  <meta property="og:description" content="Python and web developer based in Croatia. Projects, experience and contact.">
+  <meta property="og:image" content="https://tyhrr.github.io/portfolio-optimized/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portrait of Alan Salva">
   <meta property="og:site_name" content="Alan Salva Portfolio">
-  
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="hr_HR">
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://alansalva.online">
-  <meta name="twitter:title" content="Alan Salva | Python Developer Portfolio">
-  <meta name="twitter:description" content="Professional portfolio showcasing web development projects and skills">
-  <meta name="twitter:image" content="https://alansalva.online/assets/img/fotoperfil.png">
-  
+  <meta name="twitter:title" content="Alan Salva | Python &amp; Web Developer">
+  <meta name="twitter:description" content="Python and web developer based in Croatia. Projects, experience and contact.">
+  <meta name="twitter:image" content="https://tyhrr.github.io/portfolio-optimized/assets/img/og-image.jpg">
+  <meta name="twitter:image:alt" content="Portrait of Alan Salva">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alan Salva",
+    "jobTitle": "Python & Web Developer",
+    "url": "https://tyhrr.github.io/portfolio-optimized/",
+    "image": "https://tyhrr.github.io/portfolio-optimized/assets/img/og-image.jpg",
+    "email": "mailto:alangabrielsalva@gmail.com",
+    "address": { "@type": "PostalAddress", "addressCountry": "HR" },
+    "knowsLanguage": ["en", "es"],
+    "knowsAbout": ["Python", "JavaScript", "HTML", "CSS", "Web Scraping", "Data Analysis"],
+    "sameAs": [
+      "https://github.com/tyhrr",
+      "https://linkedin.com/in/alan-salva"
+    ]
+  }
+  </script>
+
   <!-- Favicon and Icons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fotoperfil.png">
-  
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="css/styles-optimized.css" as="style">
-  <link rel="preload" href="assets/img/banner.jpg" as="image">
-  
-  <!-- External Stylesheets -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/styles-optimized.css">
-  
-  <!-- Theme Color -->
-  <meta name="theme-color" content="#FF6B00">
-</head>  <body>
 
-    <!-- Main Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1a1a1a">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" data-key="skip-link">Skip to main content</a>
+
+  <!-- Main Navigation -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main navigation" data-aria-key="aria-main-nav">
       <div class="nav__content">
         <div class="navbar__brand">
-          <a href="#" class="brand-link" aria-label="Go to homepage">
-            <span class="brand-text">AS</span>
+          <a href="#main-content" class="brand-link" aria-label="Alan Salva — back to top" data-aria-key="aria-home">
+            <span class="brand-text" aria-hidden="true">AS</span>
           </a>
         </div>
-        
+
         <!-- Language Switcher -->
-        <div class="language-switcher" aria-label="Language selector">
-          <button class="lang-btn-main" id="currentLang" aria-haspopup="true" aria-expanded="false">
-            EN <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        <div class="language-switcher">
+          <button type="button" class="lang-btn-main" id="currentLang"
+                  aria-expanded="false" aria-controls="langDropdown"
+                  aria-label="Language: English" data-aria-key="aria-language">
+            <span aria-hidden="true">EN</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <div class="lang-dropdown" id="langDropdown" role="menu">
-            <button class="lang-option" data-lang="es" role="menuitem">ES</button>
-            <button class="lang-option" data-lang="hr" role="menuitem">HR</button>
-          </div>
+          <ul class="lang-dropdown" id="langDropdown">
+            <li><button type="button" class="lang-option" data-lang="es" lang="es">Español</button></li>
+            <li><button type="button" class="lang-option" data-lang="hr" lang="hr">Hrvatski</button></li>
+          </ul>
         </div>
-        
-        <!-- Mobile Menu Input (hidden) -->
-        <input type="checkbox" name="mobile-menu-toggle" id="mobile-menu-toggle" class="mobile-menu-input">
-        
+
         <!-- Mobile Menu Toggle Button -->
-        <label for="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle mobile menu">
-          <span class="hamburger-icon">
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn"
+                aria-expanded="false" aria-controls="navbar-menu"
+                aria-label="Open menu" data-aria-key="aria-open-menu">
+          <span class="hamburger-icon" aria-hidden="true">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
           </span>
-        </label>
-        
+        </button>
+
         <!-- Navigation Menu -->
-        <ul class="navbar__menu" role="menubar">
-          <li role="none">
-            <a href="assets/documents/Motivaton letter Alan Salva.pdf" 
-               download 
-               class="nav-link"
-               role="menuitem"
-               aria-label="Download motivation letter">
-              <span data-key="nav-motivation">Motivation</span> 
-              <i class="fa-solid fa-bomb nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li role="none">
-            <a href="assets/documents/Certifications - Alan Salva.pdf" 
-               download 
-               class="nav-link"
-               role="menuitem"
-               aria-label="Download resume">
-              <span data-key="nav-resume">Resume</span> 
-              <i class="fa-solid fa-file nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li role="none">
-            <a href="mailto:alangabrielsalva@gmail.com?subject=Open Positions" 
-               class="nav-link"
-               role="menuitem"
-               aria-label="Send email">
-              <span data-key="nav-contact">Contact</span> 
-              <i class="fa-solid fa-comment nav-icon" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li role="none">
-            <a href="#about-me" 
-               class="nav-link"
-               role="menuitem"
-               aria-label="About me">
-              <span data-key="nav-about-me">About Me</span> 
+        <ul class="navbar__menu" id="navbar-menu">
+          <li>
+            <a href="#about-me" class="nav-link">
+              <span data-key="nav-about-me">About Me</span>
               <i class="fa-solid fa-user nav-icon" aria-hidden="true"></i>
             </a>
           </li>
-          <li role="none">
-            <a href="#projects" 
-               class="nav-link"
-               role="menuitem"
-               aria-label="View projects">
-              <span data-key="nav-projects">Projects</span> 
+          <li>
+            <a href="#projects" class="nav-link">
+              <span data-key="nav-projects">Projects</span>
               <i class="fa-solid fa-diagram-project nav-icon" aria-hidden="true"></i>
             </a>
           </li>
-          <li role="none">
-            <a href="#about-website" 
-               class="nav-link"
-               role="menuitem"
-               aria-label="About this website">
-              <span data-key="nav-about-website">About Website</span> 
+          <li>
+            <a href="#about-website" class="nav-link">
+              <span data-key="nav-about-website">About Website</span>
               <i class="fa-solid fa-code nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="assets/documents/Motivation%20letter%20Alan%20Salva.pdf" download class="nav-link">
+              <span data-key="nav-motivation">Motivation Letter</span>
+              <i class="fa-solid fa-envelope-open-text nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="assets/documents/Certifications%20-%20Alan%20Salva.pdf" download class="nav-link">
+              <span data-key="nav-certifications">Certifications</span>
+              <i class="fa-solid fa-award nav-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:alangabrielsalva@gmail.com?subject=Open%20Positions" class="nav-link">
+              <span data-key="nav-contact">Contact</span>
+              <i class="fa-solid fa-comment nav-icon" aria-hidden="true"></i>
             </a>
           </li>
         </ul>
       </div>
     </nav>
+  </header>
 
+  <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
-    <main id="main-content">
-      <section class="hero-section" aria-labelledby="hero-title">
-        <div class="hero__container">
-          <div class="hero__content">
-            <p class="hero__greeting" data-key="hero-greeting">HELLO</p>
-            <h1 id="hero-title" class="hero__title">
-              <span data-key="hero-intro">I'm</span> 
-              <span class="hero__name">Alan<br>a</span> 
-              <span data-key="hero-role">Web Developer</span>
-            </h1>
-            <p class="hero__description" data-key="hero-description">
-              I'm a passionate Python Developer and IT Support specialist with experience in web development, 
-                data analysis, and technical support. Currently studying Development with Python and constantly 
-                expanding my knowledge in artificial intelligence and software development.
-            </p>
-            
-            <!-- Call to Action -->
-            <div class="hero__actions">
-              <a href="assets/documents/ALAN SALVACV-EN-IT.pdf" 
-                 download 
-                 class="btn btn--primary"
-                 aria-label="Download resume">
-                <span data-key="hero-resume">Resume</span> 
-                <i class="fa-solid fa-paper-plane btn__icon" aria-hidden="true"></i>
-              </a>
-            </div>
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero__container">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">
+            <span data-key="hero-intro">I'm</span>
+            <span class="hero__name">Alan</span><br>
+            <span data-key="hero-role">a Python &amp; Web Developer</span>
+          </h1>
+          <p class="hero__description" data-key="hero-description">
+            Welcome to my portfolio! I'm Alan, a Python and web developer based in Croatia and a data analysis student.
+            I've worked on web projects ranging from personal blogs to e-commerce platforms, and I'm looking for an
+            opportunity to keep growing in software development and artificial intelligence.
+          </p>
+
+          <!-- Call to Action -->
+          <div class="hero__actions">
+            <a href="assets/documents/ALAN%20SALVACV-EN-IT.pdf" download class="btn btn--primary">
+              <span data-key="hero-resume">Download CV</span>
+              <i class="fa-solid fa-download btn__icon" aria-hidden="true"></i>
+            </a>
           </div>
-          
-          <!-- Developer Terminal -->
-          <div class="hero__terminal">
-            <div class="terminal">
-              <div class="terminal__header">
-                <div class="terminal__controls">
-                  <span class="terminal__control terminal__control--close"></span>
-                  <span class="terminal__control terminal__control--minimize"></span>
-                  <span class="terminal__control terminal__control--maximize"></span>
-                </div>
-                <div class="terminal__title">alan@developer:~$</div>
+        </div>
+
+        <!-- Developer Terminal (decorative summary of the hero text) -->
+        <div class="hero__terminal" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal__header">
+              <div class="terminal__controls">
+                <span class="terminal__control terminal__control--close"></span>
+                <span class="terminal__control terminal__control--minimize"></span>
+                <span class="terminal__control terminal__control--maximize"></span>
               </div>
-              <div class="terminal__body">
-                <div class="terminal__line">
-                  <span class="terminal__prompt">alan@developer:~$</span>
-                  <span class="terminal__command">cat about.json</span>
+              <div class="terminal__title">alan@developer:~$</div>
+            </div>
+            <div class="terminal__body">
+              <div class="terminal__line">
+                <span class="terminal__prompt">alan@developer:~$</span>
+                <span class="terminal__command">cat about.json</span>
+              </div>
+              <div class="terminal__output">
+                <div class="terminal__json">
+                  <span class="json__bracket">{</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"name"</span><span class="json__colon">:</span> <span class="json__string">"Alan Salva"</span><span class="json__comma">,</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"role"</span><span class="json__colon">:</span> <span class="json__string">"Python &amp; Web Developer"</span><span class="json__comma">,</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"status"</span><span class="json__colon">:</span> <span class="json__string">"Data Analysis Student"</span><span class="json__comma">,</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"location"</span><span class="json__colon">:</span> <span class="json__string">"Croatia"</span><span class="json__comma">,</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"languages"</span><span class="json__colon">:</span> <span class="json__bracket">[</span><span class="json__string">"Spanish"</span><span class="json__comma">,</span> <span class="json__string">"English"</span><span class="json__bracket">]</span><span class="json__comma">,</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"skills"</span><span class="json__colon">:</span> <span class="json__bracket">[</span><br>
+                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Python"</span><span class="json__comma">,</span><br>
+                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"JavaScript"</span><span class="json__comma">,</span><br>
+                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"HTML/CSS"</span><span class="json__comma">,</span><br>
+                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Data Analysis"</span><span class="json__comma">,</span><br>
+                  <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Web Scraping"</span><br>
+                  <span class="json__bracket">&nbsp;&nbsp;]</span><span class="json__comma">,</span><br>
+                  <span class="json__key">&nbsp;&nbsp;"passion"</span><span class="json__colon">:</span> <span class="json__string">"Building useful solutions"</span><br>
+                  <span class="json__bracket">}</span>
                 </div>
-                <div class="terminal__output">
-                  <div class="terminal__json">
-                    <span class="json__bracket">{</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"name"</span><span class="json__colon">:</span> <span class="json__string">"Alan Salva"</span><span class="json__comma">,</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"role"</span><span class="json__colon">:</span> <span class="json__string">"Python Developer"</span><span class="json__comma">,</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"status"</span><span class="json__colon">:</span> <span class="json__string">"Data Analysis Student"</span><span class="json__comma">,</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"location"</span><span class="json__colon">:</span> <span class="json__string">"Croatia"</span><span class="json__comma">,</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"languages"</span><span class="json__colon">:</span> <span class="json__bracket">[</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Spanish"</span><span class="json__comma">,</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"English"</span><span class="json__comma">,</span><br>
-                    <span class="json__bracket">&nbsp;&nbsp;]</span><span class="json__comma">,</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"skills"</span><span class="json__colon">:</span> <span class="json__bracket">[</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Python"</span><span class="json__comma">,</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"JavaScript"</span><span class="json__comma">,</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"HTML/CSS"</span><span class="json__comma">,</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Data Analysis"</span><span class="json__comma">,</span><br>
-                    <span class="json__string">&nbsp;&nbsp;&nbsp;&nbsp;"Web Development"</span><br>
-                    <span class="json__bracket">&nbsp;&nbsp;]</span><span class="json__comma">,</span><br>
-                    <span class="json__key">&nbsp;&nbsp;"passion"</span><span class="json__colon">:</span> <span class="json__string">"Building innovative solutions"</span><span class="json__comma">,</span><br>
-                    <span class="json__bracket">}</span>
-                  </div>
-                </div>
-                <div class="terminal__line">
-                  <span class="terminal__prompt">alan@developer:~$</span>
-                  <span class="terminal__cursor">█</span>
-                </div>
+              </div>
+              <div class="terminal__line">
+                <span class="terminal__prompt">alan@developer:~$</span>
+                <span class="terminal__cursor">█</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- About Me Section -->
-      <section id="about-me" class="about-me-section" aria-labelledby="about-me-title">
-        <div class="about-me__container">
-          <h2 id="about-me-title" class="about-me__title" data-key="about-me-title">About Me</h2>
-          
-          <div class="about-me__content">
-            <!-- Personal Info -->
-            <div class="about-me__intro">
-              <p class="about-me__description" data-key="about-me-description">
-                I'm a passionate Web Developer specializing in JavaScript and modern web technologies. With hands-on experience 
-                building dynamic websites, e-commerce platforms, and data-driven applications, I love transforming ideas 
-                into functional, user-friendly digital solutions. Currently advancing my expertise in Python development 
-                and exploring cutting-edge AI integration to create innovative web experiences.
-              </p>
-            </div>
+    <!-- About Me Section -->
+    <section id="about-me" class="about-me-section" aria-labelledby="about-me-title">
+      <div class="about-me__container">
+        <h2 id="about-me-title" class="about-me__title" data-key="about-me-title">About Me</h2>
 
-            <!-- Work Experience -->
-            <div class="about-me__section">
-              <h3 class="about-me__section-title" data-key="work-experience-title">
-                <i class="fa-solid fa-briefcase"></i>
-                Work Experience
-              </h3>
-              
-              <div class="experience-timeline">
+        <div class="about-me__content">
+          <!-- Personal Info -->
+          <div class="about-me__intro">
+            <p class="about-me__description" data-key="about-me-description">
+              I'm a web developer who enjoys turning ideas into functional, easy-to-use digital products. I've built
+              dynamic websites, e-commerce platforms and data-driven tools with JavaScript and Python, and I'm currently
+              deepening my Python skills and exploring how to integrate AI into web projects.
+            </p>
+          </div>
 
-                <div class="experience-item">
-                  <div class="experience-period">2024</div>
-                  <div class="experience-content">
-                    <h4 class="experience-title">Developer / Web design</h4>
-                    <p class="experience-company">Working in Udruga Vestigium</p>
-                    <p class="experience-description">
-                      Currently working on a project for Udruga Vestigium, a non-profit organization. The website
-                      aims to provide resources and support for the community and is designed to be user-friendly and accessible.
-                    </p>
-                  </div>
-                </div>
+          <!-- Work Experience -->
+          <div class="about-me__section">
+            <h3 class="about-me__section-title">
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+              <span data-key="work-experience-title">Work Experience</span>
+            </h3>
 
-                <div class="experience-item">
-                  <div class="experience-period">2023</div>
-                  <div class="experience-content">
-                    <h4 class="experience-title">Developer / Web design</h4>
-                    <p class="experience-company">Working in solo projects</p>
-                    <p class="experience-description">
-                      Solo experience dedicating to learning new skills such as design and develop of websites 
-                      developing software using python and selenium to scrap websites. Be extract info from 
-                      external app design functionality.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="experience-item">
-                  <div class="experience-period">2020</div>
-                  <div class="experience-content">
-                    <h4 class="experience-title">Support Specialist / Technical Assistant</h4>
-                    <p class="experience-company">Claro Argentina</p>
-                    <p class="experience-description">
-                      Manage tasks, assist customers, provide technical support, and ensure smooth product 
-                      implementation. Strong communication and troubleshooting skills.
-                    </p>
-                  </div>
+            <div class="experience-timeline">
+              <div class="experience-item">
+                <div class="experience-period">2024</div>
+                <div class="experience-content">
+                  <h4 class="experience-title" data-key="exp1-title">Web Developer &amp; Designer</h4>
+                  <p class="experience-company">Udruga Vestigium</p>
+                  <p class="experience-description" data-key="exp1-desc">
+                    Designing and developing the website of Udruga Vestigium, a non-profit organization. The site gives
+                    the community access to resources and support, with a focus on usability and accessibility.
+                  </p>
                 </div>
               </div>
-            </div>
 
-            <!-- Education -->
-            <div class="about-me__section">
-              <h3 class="about-me__section-title" data-key="education-title">
-                <i class="fa-solid fa-graduation-cap"></i>
-                Education
-              </h3>
-              
-              <div class="education-grid">
-                <div class="education-item">
-                  <div class="education-period">2023 - 2024</div>
-                  <h4 class="education-title">Development with Python</h4>
-                  <p class="education-institution">Humai Institute - Argentina</p>
+              <div class="experience-item">
+                <div class="experience-period">2023</div>
+                <div class="experience-content">
+                  <h4 class="experience-title" data-key="exp2-title">Web Developer &amp; Designer</h4>
+                  <p class="experience-company" data-key="exp2-company">Freelance / personal projects</p>
+                  <p class="experience-description" data-key="exp2-desc">
+                    Designed and built websites and developed Python tools, including Selenium-based scrapers that
+                    extract information from external web applications.
+                  </p>
                 </div>
+              </div>
 
-                <div class="education-item">
-                  <div class="education-period">2022 - 2023</div>
-                  <h4 class="education-title">Fullstack Development</h4>
-                  <p class="education-institution">Axe School - Argentina</p>
-                </div>
-
-                <div class="education-item">
-                  <div class="education-period">2012 - 2018</div>
-                  <h4 class="education-title">Materials Engineering</h4>
-                  <p class="education-institution">UNP Buenos Aires, La Plata</p>
-                </div>
-
-                <div class="education-item">
-                  <div class="education-period">2021 - 2022</div>
-                  <h4 class="education-title">Network Administrator</h4>
-                  <p class="education-institution">Municipal Labor Office</p>
-                  <p class="education-description">
-                    Secretariat of Innovation, Production, and Employment.
+              <div class="experience-item">
+                <div class="experience-period">2020</div>
+                <div class="experience-content">
+                  <h4 class="experience-title" data-key="exp3-title">Support Specialist / Technical Assistant</h4>
+                  <p class="experience-company">Claro Argentina</p>
+                  <p class="experience-description" data-key="exp3-desc">
+                    Managed tasks, assisted customers, provided technical support and ensured smooth product
+                    implementation. Strong communication and troubleshooting skills.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Skills & Technologies -->
-            <div class="about-me__section">
-              <h3 class="about-me__section-title" data-key="skills-title">
-                <i class="fa-solid fa-code"></i>
-                Skills & Technologies
-              </h3>
-              
-              <div class="skills-grid">
-                <div class="skill-category">
-                  <h4 class="skill-category-title">Programming Languages</h4>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                  </div>
-                </div>
+          <!-- Education -->
+          <div class="about-me__section">
+            <h3 class="about-me__section-title">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              <span data-key="education-title">Education</span>
+            </h3>
 
-                <div class="skill-category">
-                  <h4 class="skill-category-title">Frameworks & Tools</h4>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">GitHub</span>
-                  </div>
-                </div>
+            <div class="education-grid">
+              <div class="education-item">
+                <div class="education-period">2023 – 2024</div>
+                <h4 class="education-title" data-key="edu1-title">Development with Python</h4>
+                <p class="education-institution">Humai Institute – Argentina</p>
+              </div>
 
-                <div class="skill-category">
-                  <h4 class="skill-category-title">Specializations</h4>
-                  <div class="skill-tags">
-                    <span class="skill-tag">Web Development</span>
-                    <span class="skill-tag">Data Analysis</span>
-                    <span class="skill-tag">Web Scraping</span>
-                    <span class="skill-tag">Technical Support</span>
-                  </div>
-                </div>
+              <div class="education-item">
+                <div class="education-period">2022 – 2023</div>
+                <h4 class="education-title" data-key="edu2-title">Full-stack Development</h4>
+                <p class="education-institution">Axe School – Argentina</p>
+              </div>
+
+              <div class="education-item">
+                <div class="education-period">2021 – 2022</div>
+                <h4 class="education-title" data-key="edu3-title">Network Administrator</h4>
+                <p class="education-institution" data-key="edu3-institution">Municipal Labor Office</p>
+                <p class="education-description" data-key="edu3-desc">
+                  Secretariat of Innovation, Production and Employment.
+                </p>
+              </div>
+
+              <div class="education-item">
+                <div class="education-period">2012 – 2018</div>
+                <h4 class="education-title" data-key="edu4-title">Materials Engineering</h4>
+                <p class="education-institution">UNP Buenos Aires, La Plata</p>
               </div>
             </div>
+          </div>
 
-            <!-- Languages -->
-            <div class="about-me__section">
-              <h3 class="about-me__section-title" data-key="languages-title">
-                <i class="fa-solid fa-globe"></i>
-                Languages
-              </h3>
-              
-                <div class="language-item">
-                  <span class="language-name">English</span>
-                  <div class="language-level">
-                    <span class="level-indicator level-advanced"></span>
-                    <span class="level-text">Advanced</span>
-                  </div>
+          <!-- Skills & Technologies -->
+          <div class="about-me__section">
+            <h3 class="about-me__section-title">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <span data-key="skills-title">Skills &amp; Technologies</span>
+            </h3>
+
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4 class="skill-category-title" data-key="skills-languages">Programming Languages</h4>
+                <ul class="skill-tags">
+                  <li class="skill-tag">Python</li>
+                  <li class="skill-tag">JavaScript</li>
+                  <li class="skill-tag">HTML5</li>
+                  <li class="skill-tag">CSS3</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4 class="skill-category-title" data-key="skills-tools">Frameworks &amp; Tools</h4>
+                <ul class="skill-tags">
+                  <li class="skill-tag">Docker</li>
+                  <li class="skill-tag">Node.js</li>
+                  <li class="skill-tag">Git</li>
+                  <li class="skill-tag">GitHub</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h4 class="skill-category-title" data-key="skills-specializations">Specializations</h4>
+                <ul class="skill-tags">
+                  <li class="skill-tag" data-key="spec-web">Web Development</li>
+                  <li class="skill-tag" data-key="spec-data">Data Analysis</li>
+                  <li class="skill-tag" data-key="spec-scraping">Web Scraping</li>
+                  <li class="skill-tag" data-key="spec-support">Technical Support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="about-me__section">
+            <h3 class="about-me__section-title">
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
+              <span data-key="languages-title">Languages</span>
+            </h3>
+
+            <div class="languages-grid">
+              <div class="language-item">
+                <span class="language-name" data-key="lang-spanish">Spanish</span>
+                <div class="language-level">
+                  <span class="level-indicator level-fluent" aria-hidden="true"></span>
+                  <span class="level-text" data-key="level-native">Native</span>
                 </div>
-                
-                <div class="language-item">
-                  <span class="language-name">Spanish</span>
-                  <div class="language-level">
-                    <span class="level-indicator level-fluent"></span>
-                    <span class="level-text">Fluent</span>
-                  </div>
+              </div>
+
+              <div class="language-item">
+                <span class="language-name" data-key="lang-english">English</span>
+                <div class="language-level">
+                  <span class="level-indicator level-advanced" aria-hidden="true"></span>
+                  <span class="level-text" data-key="level-advanced">Advanced</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="projects-section" aria-labelledby="projects-title">
-        <div class="projects__container">
-          <h2 id="projects-title" class="projects__title" data-key="projects-title">My Projects</h2>
-          
-          <!-- Projects Grid -->
-          <div id="projects-grid" class="projects__grid" role="region" aria-live="polite">
-            <!-- Projects will be loaded dynamically -->
-          </div>
-          
-          <!-- Loading Indicator -->
-          <div id="loading-indicator" class="loading" style="display: none;" aria-hidden="true">
-            <span data-key="loading-text">Loading more projects...</span>
-          </div>
-        </div>
-      </section>
-      <!-- About Website Section -->
-      <section id="about-website" class="about-website-section" aria-labelledby="about-website-title">
-        <div class="about-website__container">
-          <h2 id="about-website-title" class="about-website__title" data-key="about-website-title">
-            About This Website
-          </h2>
-          <p class="about-website__description" data-key="about-website-description">
-            A complete journey from concept to deployment - documenting the evolution of this portfolio
-          </p>
-          
-          <!-- Development Timeline 
-          <div class="timeline">
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-rocket"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">January 15, 2025</div>
-                <h3 class="timeline__title">Project Inception</h3>
-                <p class="timeline__description">
-                  Started the portfolio optimization project with the goal of creating a professional, 
-                  modern, and accessible website. Initial analysis of existing code structure and planning.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">Planning</span>
-                  <span class="tech-tag">Analysis</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">February 8, 2025</div>
-                <h3 class="timeline__title">HTML Optimization & Accessibility</h3>
-                <p class="timeline__description">
-                  Complete refactoring of HTML structure with semantic markup, ARIA labels, 
-                  improved SEO meta tags, and accessibility enhancements. Added proper heading hierarchy 
-                  and navigation structure.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">HTML5</span>
-                  <span class="tech-tag">SEO</span>
-                  <span class="tech-tag">Accessibility</span>
-                  <span class="tech-tag">ARIA</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-palette"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">March 5, 2025</div>
-                <h3 class="timeline__title">CSS Architecture & BEM Methodology</h3>
-                <p class="timeline__description">
-                  Created styles-optimized.css with modern CSS architecture using BEM methodology, 
-                  CSS custom properties, improved responsive design, and consolidated media queries 
-                  for better maintainability.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">CSS3</span>
-                  <span class="tech-tag">BEM</span>
-                  <span class="tech-tag">CSS Grid</span>
-                  <span class="tech-tag">Flexbox</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-gear"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">March 28, 2025</div>
-                <h3 class="timeline__title">JavaScript Modernization</h3>
-                <p class="timeline__description">
-                  Rewrote JavaScript using ES6+ features, classes, modules, and modern best practices. 
-                  Improved language switcher with dropdown functionality and enhanced user experience 
-                  with proper error handling.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">ES6+</span>
-                  <span class="tech-tag">Classes</span>
-                  <span class="tech-tag">Modules</span>
-                  <span class="tech-tag">Async/Await</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-file-alt"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">April 12, 2025</div>
-                <h3 class="timeline__title">Professional Documentation</h3>
-                <p class="timeline__description">
-                  Created comprehensive README.md, .gitignore, LICENSE (MIT), CONTRIBUTING.md, 
-                  and package.json. Added professional project structure and contribution guidelines 
-                  for open source collaboration.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">Documentation</span>
-                  <span class="tech-tag">MIT License</span>
-                  <span class="tech-tag">Open Source</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-brands fa-github"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">April 20, 2025</div>
-                <h3 class="timeline__title">GitHub Repository & Version Control</h3>
-                <p class="timeline__description">
-                  Set up GitHub repository with proper version control, professional commit messages, 
-                  and repository structure. Established workflow for continuous integration and deployment.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">Git</span>
-                  <span class="tech-tag">GitHub</span>
-                  <span class="tech-tag">Version Control</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-cloud"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">May 8, 2025</div>
-                <h3 class="timeline__title">GitHub Pages Deployment</h3>
-                <p class="timeline__description">
-                  Successfully deployed the website to GitHub Pages with automatic deployment pipeline. 
-                  Site became accessible at tyhrr.github.io/portfolio-optimized with continuous integration.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">GitHub Pages</span>
-                  <span class="tech-tag">CI/CD</span>
-                  <span class="tech-tag">Deployment</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-globe"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">May 15-18, 2025</div>
-                <h3 class="timeline__title">Custom Domain Configuration</h3>
-                <p class="timeline__description">
-                  Configured custom domain alansalva.online with proper DNS settings. Set up A records 
-                  and CNAME records for GitHub Pages, ensuring both www and non-www versions work correctly 
-                  with global DNS propagation.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">DNS</span>
-                  <span class="tech-tag">Domain</span>
-                  <span class="tech-tag">Hostinger</span>
-                  <span class="tech-tag">A Records</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">May 20, 2025</div>
-                <h3 class="timeline__title">SSL Certificate & HTTPS</h3>
-                <p class="timeline__description">
-                  GitHub Pages automatically generated SSL certificate for the custom domain. 
-                  Website now fully secured with HTTPS encryption and "Enforce HTTPS" enabled 
-                  for enhanced security and SEO benefits.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">SSL/TLS</span>
-                  <span class="tech-tag">HTTPS</span>
-                  <span class="tech-tag">Security</span>
-                  <span class="tech-tag">Let's Encrypt</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-terminal"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">June 10, 2025</div>
-                <h3 class="timeline__title">Interactive Developer Terminal</h3>
-                <p class="timeline__description">
-                  Replaced static profile image with an interactive Linux-style terminal displaying 
-                  developer information in JSON format. Added animations, syntax highlighting, 
-                  and responsive design for enhanced user engagement.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">Interactive UI</span>
-                  <span class="tech-tag">Animations</span>
-                  <span class="tech-tag">Terminal UI</span>
-                  <span class="tech-tag">JSON</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-clock"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">June 30, 2025</div>
-                <h3 class="timeline__title">Development Timeline Feature</h3>
-                <p class="timeline__description">
-                  Added comprehensive "About this Website" section with interactive timeline 
-                  documenting the complete development journey. This section showcases the 
-                  evolution of the project from concept to current state.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">Timeline UI</span>
-                  <span class="tech-tag">Documentation</span>
-                  <span class="tech-tag">Project History</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline__item timeline__item--current">
-              <div class="timeline__marker">
-                <i class="fa-solid fa-clock"></i>
-              </div>
-              <div class="timeline__content">
-                <div class="timeline__date">July 3, 2025</div>
-                <h3 class="timeline__title">Development About-Me Section</h3>
-                <p class="timeline__description">
-                  Added comprehensive "About Me" section with detailed information about my background,
-                  skills, and experience. This section highlights my journey as a developer.
-                </p>
-                <div class="timeline__tech">
-                  <span class="tech-tag">Timeline UI</span>
-                  <span class="tech-tag">Documentation</span>
-                  <span class="tech-tag">Project History</span>
-                </div>
-              </div>
-            </div>
-
-          </div> -->
-
-          <!-- Project Stats -->
-          <div class="project-stats">
-            <div class="project-stats__item">
-              <div class="project-stats__number">15+</div>
-              <div class="project-stats__label">Git Commits</div>
-            </div>
-            <div class="project-stats__item">
-              <div class="project-stats__number">1000+</div>
-              <div class="project-stats__label">Lines of Code</div>
-            </div>
-            <div class="project-stats__item">
-              <div class="project-stats__number">100%</div>
-              <div class="project-stats__label">Optimization</div>
-            </div>
-          </div>
-
-          <!-- Technologies Used -->
-          <div class="tech-stack">
-            <h3 class="tech-stack__title" data-key="tech-stack-title">Technologies & Tools Used</h3>
-            <div class="tech-stack__grid">
-              <div class="tech-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML5</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-js-square"></i>
-                <span>JavaScript ES6+</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </div>
-              <div class="tech-item">
-                <i class="fa-solid fa-server"></i>
-                <span>GitHub Pages</span>
-              </div>
-              <div class="tech-item">
-                <i class="fa-solid fa-globe"></i>
-                <span>Custom Domain</span>
-              </div>
-              <div class="tech-item">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span>SSL/HTTPS</span>
-              </div>
-              <div class="tech-item">
-                <i class="fa-solid fa-universal-access"></i>
-                <span>WCAG 2.1</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-      <div class="footer__content">
-        <!-- Social Links -->
-        <nav class="social-nav" aria-label="Social media links">
-          <a href="https://wa.me/385957926694?text=Hola%20Alan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
-             class="social-link" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="Contact via WhatsApp">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          </a>
-          <a href="mailto:alangabrielsalva@gmail.com?subject=Contact from Portfolio" 
-             class="social-link"
-             aria-label="Send email">
-            <i class="far fa-envelope" aria-hidden="true"></i>
-          </a>
-          <a href="https://github.com/tyhrr" 
-             class="social-link"
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="View GitHub profile">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-          </a>
-        </nav>
       </div>
-      
-      <!-- Copyright -->
-      <div class="footer__bottom">
-        <p class="footer__copyright">
-          &copy; <span id="current-year">2025</span> Designed by ASDesign
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section" aria-labelledby="projects-title">
+      <div class="projects__container">
+        <h2 id="projects-title" class="projects__title" data-key="projects-title">My Projects</h2>
+
+        <!-- Projects are rendered by js/script.js in the current language -->
+        <div id="projects-grid" class="projects__grid"></div>
+        <noscript>
+          <p>See all projects on <a href="https://github.com/tyhrr">GitHub</a>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- About Website Section -->
+    <section id="about-website" class="about-website-section" aria-labelledby="about-website-title">
+      <div class="about-website__container">
+        <h2 id="about-website-title" class="about-website__title" data-key="about-website-title">About This Website</h2>
+        <p class="about-website__description" data-key="about-website-description">
+          A hand-coded, framework-free site: semantic HTML, modern CSS and vanilla JavaScript, available in three languages and hosted on GitHub Pages.
         </p>
-      </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+        <!-- Project Stats -->
+        <dl class="project-stats">
+          <div class="project-stats__item">
+            <dt class="project-stats__label" data-key="stat-languages">Site languages</dt>
+            <dd class="project-stats__number">3</dd>
+          </div>
+          <div class="project-stats__item">
+            <dt class="project-stats__label" data-key="stat-frameworks">Frameworks</dt>
+            <dd class="project-stats__number">0</dd>
+          </div>
+          <div class="project-stats__item">
+            <dt class="project-stats__label" data-key="stat-projects">Featured projects</dt>
+            <dd class="project-stats__number" id="stat-projects-count">4</dd>
+          </div>
+        </dl>
+
+        <!-- Technologies Used -->
+        <div class="tech-stack">
+          <h3 class="tech-stack__title" data-key="tech-stack-title">Technologies &amp; Tools Used</h3>
+          <ul class="tech-stack__grid">
+            <li class="tech-item"><i class="fab fa-html5" aria-hidden="true"></i><span>HTML5</span></li>
+            <li class="tech-item"><i class="fab fa-css3-alt" aria-hidden="true"></i><span>CSS3</span></li>
+            <li class="tech-item"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript ES6+</span></li>
+            <li class="tech-item"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></li>
+            <li class="tech-item"><i class="fa-solid fa-server" aria-hidden="true"></i><span>GitHub Pages</span></li>
+            <li class="tech-item"><i class="fa-solid fa-language" aria-hidden="true"></i><span>EN · ES · HR</span></li>
+            <li class="tech-item"><i class="fa-solid fa-universal-access" aria-hidden="true"></i><span>WCAG 2.1</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__content">
+      <!-- Social Links -->
+      <nav class="social-nav" aria-label="Contact and social links" data-aria-key="aria-social">
+        <a href="https://wa.me/385957926694?text=Hola%20Alan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte."
+           class="social-link" target="_blank" rel="noopener noreferrer"
+           aria-label="WhatsApp (opens in a new tab)" data-aria-key="aria-whatsapp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:alangabrielsalva@gmail.com?subject=Contact%20from%20Portfolio"
+           class="social-link" aria-label="Email" data-aria-key="aria-email">
+          <i class="far fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="https://linkedin.com/in/alan-salva"
+           class="social-link" target="_blank" rel="noopener noreferrer"
+           aria-label="LinkedIn (opens in a new tab)" data-aria-key="aria-linkedin">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/tyhrr"
+           class="social-link" target="_blank" rel="noopener noreferrer"
+           aria-label="GitHub (opens in a new tab)" data-aria-key="aria-github">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        &copy; <span id="current-year">2026</span> Alan Salva
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js" defer></script>
+</body>
 </html>

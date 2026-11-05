@@ -37,7 +37,7 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for more 
 
 ## Contact
 
-- Website: [alansalva.online](https://tyhrr.github.io/portfolio-optimized)
+- Website: [tyhrr.github.io/portfolio-optimized](https://tyhrr.github.io/portfolio-optimized/)
 - GitHub: [@tyhrr](https://github.com/tyhrr)
 - LinkedIn: [Alan Salva](https://linkedin.com/in/alan-salva)
 - Email: [alangabrielsalva@gmail.com](mailto:alangabrielsalva@gmail.com)

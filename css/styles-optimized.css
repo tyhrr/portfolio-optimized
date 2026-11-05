@@ -11,6 +11,7 @@
   /* Colors */
   --color-primary: #FF6B00;
   --color-primary-hover: #FF8C42;
+  --color-on-primary: #1a1a1a; /* white on #FF6B00 is only 2.9:1; dark text is 6:1 */
   --color-primary-light: rgba(255, 107, 0, 0.1);
   --color-bg-dark: #1a1a1a;
   --color-bg-section: #2d2d2d;
@@ -115,19 +116,20 @@ ul, ol {
    ================================= */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: 6px;
+  transform: translateY(-200%);
   left: 6px;
   background: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
   padding: 8px;
   border-radius: 4px;
   text-decoration: none;
   z-index: var(--z-tooltip);
-  transition: top var(--transition-fast);
+  transition: transform var(--transition-fast);
 }
 
 .skip-link:focus {
-  top: 6px;
+  transform: translateY(0);
 }
 
 .sr-only {
@@ -162,7 +164,7 @@ ul, ol {
 
 .btn--primary {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
 }
 
 .btn--primary:hover {
@@ -219,7 +221,7 @@ ul, ol {
   border-radius: 50%;
   font-weight: 700;
   font-size: var(--font-size-xl);
-  color: white;
+  color: var(--color-on-primary);
   transition: transform var(--transition-base);
 }
 
@@ -231,7 +233,8 @@ ul, ol {
 .navbar__menu {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm);
+  white-space: nowrap;
 }
 
 .nav-link {
@@ -292,7 +295,7 @@ ul, ol {
 .lang-btn-main.active {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
 }
 
 .lang-dropdown {
@@ -304,6 +307,7 @@ ul, ol {
   border: 2px solid var(--color-border-hover);
   border-radius: var(--border-radius-sm);
   margin-top: 5px;
+  min-width: max-content;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -328,21 +332,22 @@ ul, ol {
   cursor: pointer;
   font-size: var(--font-size-sm);
   font-weight: 600;
-  text-transform: uppercase;
-  transition: all var(--transition-base);
+  /* not "all": an inherited visibility transition would block keyboard focus */
+  transition: background-color var(--transition-base), color var(--transition-base);
   text-align: left;
+  white-space: nowrap;
 }
 
 .lang-option:hover {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
 }
 
-.lang-option:first-child {
+.lang-dropdown li:first-child .lang-option {
   border-radius: 6px 6px 0 0;
 }
 
-.lang-option:last-child {
+.lang-dropdown li:last-child .lang-option {
   border-radius: 0 0 6px 6px;
 }
 
@@ -359,9 +364,10 @@ ul, ol {
 .mobile-menu-btn {
   display: none;
   cursor: pointer;
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
   background: transparent;
   border: none;
+  border-radius: var(--border-radius-sm);
   z-index: calc(var(--z-header) + 1);
   position: relative;
 }
@@ -385,35 +391,38 @@ ul, ol {
 }
 
 /* Hamburger Animation */
-.mobile-menu-input:checked ~ .navbar__menu {
+.navbar.is-open .navbar__menu {
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
 }
 
-.mobile-menu-input:checked ~ .mobile-menu-btn .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+.navbar.is-open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
   background-color: var(--color-primary);
 }
 
-.mobile-menu-input:checked ~ .mobile-menu-btn .hamburger-line:nth-child(2) {
+.navbar.is-open .hamburger-line:nth-child(2) {
   opacity: 0;
   transform: scale(0);
 }
 
-.mobile-menu-input:checked ~ .mobile-menu-btn .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.navbar.is-open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
   background-color: var(--color-primary);
-}
-
-.mobile-menu-input {
-  display: none;
 }
 
 /* =================================
    NAVBAR RESPONSIVE DESIGN
+   (hamburger below 1200px: six links in three languages don't fit in one row)
    ================================= */
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
+  .nav-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
   .nav__content {
     position: relative;
   }
@@ -439,7 +448,12 @@ ul, ol {
     margin-top: var(--spacing-xs);
     padding: var(--spacing-sm) 0;
     box-shadow: var(--shadow-lg);
-    transform: translateX(100%);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    transform: translateY(-8px);
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
@@ -460,7 +474,7 @@ ul, ol {
     border-bottom: 1px solid var(--color-border);
   }
   
-  .nav-link:last-child {
+  .navbar__menu li:last-child .nav-link {
     border-bottom: none;
   }
   
@@ -543,13 +557,6 @@ ul, ol {
   gap: var(--spacing-lg);
 }
 
-.hero__greeting {
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  color: var(--color-primary);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
 
 .hero__title {
   font-size: var(--font-size-4xl);
@@ -763,7 +770,7 @@ ul, ol {
 }
 
 .carousel-item:hover {
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
   background: var(--color-primary-light);
   transform: translateY(-5px);
 }
@@ -831,26 +838,12 @@ ul, ol {
 }
 
 .project-card:hover {
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--color-primary);
-  transform: scaleX(0);
-  transition: transform var(--transition-base);
-}
 
-.project-card:hover::before {
-  transform: scaleX(1);
-}
 
 .project-card__content {
   position: relative;
@@ -928,7 +921,7 @@ ul, ol {
 .social-link:hover {
   border-color: var(--color-primary);
   background: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
   transform: translateY(-3px);
 }
 
@@ -1099,6 +1092,13 @@ ul, ol {
 
 .project-stats__item {
   text-align: center;
+  /* <dt> label comes first in the markup; show the number on top */
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.project-stats__number {
+  margin-left: 0;
 }
 
 .project-stats__number {
@@ -1144,7 +1144,7 @@ ul, ol {
 
 .tech-item:hover {
   transform: translateY(-3px);
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
 }
 
 .tech-item i {
@@ -1191,10 +1191,7 @@ ul, ol {
   font-weight: 700;
   text-align: center;
   margin-bottom: var(--spacing-xl);
-  background: linear-gradient(135deg, var(--color-text-primary), var(--color-primary));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text-primary);
   position: relative;
 }
 
@@ -1234,15 +1231,6 @@ ul, ol {
   overflow: hidden;
 }
 
-.about-me__description::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), transparent);
-}
 
 .about-me__section {
   background: rgba(255, 255, 255, 0.03);
@@ -1273,7 +1261,7 @@ ul, ol {
 
 .about-me__section:hover {
   transform: translateY(-5px);
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1406,26 +1394,11 @@ ul, ol {
   overflow: hidden;
 }
 
-.education-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), rgba(255, 107, 0, 0.3));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-base);
-}
 
-.education-item:hover::before {
-  transform: scaleX(1);
-}
 
 .education-item:hover {
   transform: translateY(-5px);
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
   box-shadow: var(--shadow-md);
 }
 
@@ -1471,7 +1444,7 @@ ul, ol {
 }
 
 .skill-category:hover {
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -1485,13 +1458,6 @@ ul, ol {
   gap: var(--spacing-xs);
 }
 
-.skill-category-title::before {
-  content: '';
-  width: 4px;
-  height: 20px;
-  background: var(--color-primary);
-  border-radius: 2px;
-}
 
 .skill-tags {
   display: flex;
@@ -1536,7 +1502,7 @@ ul, ol {
 
 .language-item:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: var(--color-primary);
+  border-color: rgba(255, 107, 0, 0.35);
 }
 
 .language-name {
@@ -1811,4 +1777,48 @@ ul, ol {
     text-align: center;
     gap: var(--spacing-xs);
   }
+}
+
+/* =================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================= */
+
+/* Visible keyboard focus for every interactive element */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-sm);
+}
+
+.btn--primary:focus-visible,
+.brand-link:focus-visible {
+  outline-color: var(--color-text-primary);
+}
+
+/* Sections land below the fixed navbar when reached via anchor links */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Inline icon inside translated section headings */
+.about-me__section-title i {
+  margin-right: var(--spacing-xs);
+}
+
+/* Respect the user's reduced-motion setting (covers keyframe animations too) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Show the language list instantly when opened, so arrow-key focus can move into it
+   (an element still transitioning from visibility:hidden can't take focus) */
+.language-switcher.active .lang-dropdown {
+  transition: opacity var(--transition-base), transform var(--transition-base);
 }

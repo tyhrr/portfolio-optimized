@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tyhrr.github.io/portfolio-optimized/sitemap.xml
