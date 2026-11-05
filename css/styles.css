@@ -434,6 +434,10 @@ p { margin: 0; text-wrap: pretty; }
 
 .log .section-head { grid-column: 1 / -1; }
 
+/* The hospitality log sits on open water, between the paper log and landfall. */
+.log--water { background: var(--water); border-top: 0; border-bottom: 0; }
+.log--water .log__entry { border-bottom-color: rgba(20, 33, 43, 0.3); }
+
 .log__entries {
   grid-column: 1 / span 8;
   list-style: none; margin: 0; padding: 0;
